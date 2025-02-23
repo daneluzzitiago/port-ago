@@ -13,7 +13,10 @@ export function About() {
   return (
     <Stack gap={1}>
       <SubSection title="Degrees">
-        <Stack direction="row" gap={1} justifyContent={"space-between"}>
+        <Stack sx={{flexDirection: {
+          xs: "column",
+          sm: "row"
+        }}} gap={1} justifyContent={"space-between"}>
           {degrees.map((degree, index) => (
             <Degree key={index} degree={degree} />
           ))}
@@ -34,9 +37,11 @@ export function About() {
           p={3}
           borderRadius={3}
           justifyContent="space-evenly"
+          flexWrap="wrap"
         >
           {languagesAndFrameworks.map((item, index) => (
             <Tool
+            
               tool={item}
               key={index}
               iconColor={Colors.accent}
@@ -53,6 +58,7 @@ export function About() {
           p={3}
           borderRadius={3}
           justifyContent="space-evenly"
+          flexWrap="wrap"
         >
           {rampingUp.map((item, index) => (
             <Tool

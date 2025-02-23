@@ -6,7 +6,13 @@ import { handleScroll } from "@/utils/scroll";
 export function Hero() {
   return (
     <Stack>
-      <Box display="flex" pt={12}>
+      <Box
+        display="flex"
+        sx={{
+          flexDirection: { xs: "column", md: "row" },
+        }}
+        pt={12}
+      >
         <Stack justifyContent={"center"} flex={1} gap={4}>
           <Stack>
             <TypographyV2 variant="heroTitle">
@@ -50,7 +56,7 @@ export function Hero() {
           />
         </Stack>
       </Box>
-      <Box display={"flex"} pt={20}>
+      <Box display={{ xs: "none", md: "flex" }} pt={20}>
         <ButtonBase
           sx={{
             borderColor: Colors.white,

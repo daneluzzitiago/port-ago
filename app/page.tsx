@@ -16,8 +16,8 @@ export default function Home() {
           key={section.name}
           minHeight="95vh"
           id={section.name}
-          px={20}
-          py={10}
+          px={{ xs: 2, sm: 20 }}
+          py={{ xs: 1, sm: 10 }}
           alignItems={"center"}
           justifyContent={"center"}
         >

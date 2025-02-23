@@ -24,7 +24,7 @@ export function Experience({ experience }: ExperienceProps) {
       <Typography variant="body" textAlign={"justify"}>
         {experience.description}
       </Typography>
-      <Stack direction={"row"} spacing={1}>
+      <Stack direction={"row"} spacing={1} flexWrap="wrap" gap={1}>
         {experience.tools?.map((tool, index) => (
           <Tool
             key={index}

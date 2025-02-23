@@ -58,7 +58,7 @@ export function Projects() {
           </Stack>
 
           <Typography variant="body">{project.description}</Typography>
-          <Box display={"flex"} gap={1}>
+          <Box display={"flex"} gap={1} flexWrap="wrap">
             {project.tools.map((tool, index) => (
               <Tool
                 key={index}

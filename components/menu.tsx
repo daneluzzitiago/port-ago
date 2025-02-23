@@ -1,6 +1,7 @@
 "use client";
 
-import { AppBar, Toolbar, Box, Button, SvgIconProps, Stack } from "@mui/material";
+import { AppBar, Toolbar, Box, Button, SvgIconProps, Stack, IconButton, Drawer } from "@mui/material";
+import { Menu as MenuIcon } from "@mui/icons-material";
 import { ComponentType, useEffect, useState } from "react";
 import { Colors } from "@/app/colors";
 import { Section } from "./sections";
@@ -57,6 +58,7 @@ const StyledMenuButton = ({
 
 export function Menu({ sections }: MenuProps) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,6 +69,19 @@ export function Menu({ sections }: MenuProps) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const menuItems = (
+    <Stack direction="column" gap={2} p={2}>
+      {sections.map((element: Section) => (
+        <StyledMenuButton
+          key={element.name}
+          sectionName={element.name}
+          label={element.buttonLabel}
+          Icon={element.icon}
+        />
+      ))}
+    </Stack>
+  );
 
   return (
     <AppBar
@@ -99,7 +114,15 @@ export function Menu({ sections }: MenuProps) {
             {">"}
           </TypographyV2>
         </Box>
-        <Stack direction="row" gap={3}>
+
+        {/* Desktop Menu */}
+        <Stack 
+          direction="row" 
+          gap={3} 
+          sx={{ 
+            display: { xs: 'none', md: 'flex' } 
+          }}
+        >
           {sections.map((element: Section) => (
             <StyledMenuButton
               key={element.name}
@@ -109,6 +132,32 @@ export function Menu({ sections }: MenuProps) {
             />
           ))}
         </Stack>
+
+        {/* Mobile Menu Button */}
+        <IconButton
+          sx={{
+            display: { xs: 'flex', md: 'none' },
+            color: Colors.white
+          }}
+          onClick={() => setMobileOpen(true)}
+        >
+          <MenuIcon />
+        </IconButton>
+
+        {/* Mobile Menu Drawer */}
+        <Drawer
+          anchor="right"
+          open={mobileOpen}
+          onClose={() => setMobileOpen(false)}
+          PaperProps={{
+            sx: {
+              width: 240,
+              bgcolor: Colors.backgroundLight,
+            }
+          }}
+        >
+          {menuItems}
+        </Drawer>
       </Toolbar>
     </AppBar>
   );
