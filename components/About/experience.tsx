@@ -10,7 +10,7 @@ type ExperienceProps = {
 
 export function Experience({ experience }: ExperienceProps) {
   return (
-    <Stack gap={1} bgcolor={Colors.backgroundLight} p={3} borderRadius={3}>
+    <Stack gap={1} bgcolor={Colors.backgroundLight} borderRadius={3}>
       <Stack>
         <Stack direction="row" justifyContent="space-between" alignItems="center">
           <Typography variant="h3" sx={{ fontWeight: 700 }}>
@@ -29,7 +29,7 @@ export function Experience({ experience }: ExperienceProps) {
           <Tool
             key={index}
             tool={tool}
-            borderRadius={3}
+            borderRadius={1}
             iconSize={16}
             inLine
             textProps={{ variant: "body2" }}

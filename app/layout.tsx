@@ -2,6 +2,7 @@
 
 import { ThemeProvider } from '@mui/material/styles';
 import { theme } from './theme';
+import './global.css'
 
 export default function RootLayout({
   children,
@@ -10,7 +11,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ margin: 0, padding: 0 }}>
         <ThemeProvider theme={theme}>
           {children}
         </ThemeProvider>

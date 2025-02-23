@@ -55,11 +55,10 @@ export const experiences: Experience[] = [
     companyDescription: "Consulting",
     position: "Software Development Intern",
     description:
-      "Analysis and development of functional testing systems. Use of agile software development concepts and " +
-      "Scrum framework, Jira for activity management, Zephyr for test management, and Confluence for collaborative documentation. " +
-      "Building and maintaining applications using IDEs such as IntelliJ and Visual Studio Code, as well as tools like SonarQube " +
-      "and ESLint for source code quality inspection. Code review supported by GitLab. Automated deployment, scaling, management, " +
-      "and monitoring of applications using Jenkins, Kubernetes, and Kibana.",
+      "Led the development of functional testing systems using agile methodologies and Scrum framework. " +
+      "Implemented automated testing pipelines with Jira, Zephyr, and Confluence. " +
+      "Enhanced code quality through SonarQube and ESLint integration. " +
+      "Orchestrated deployment and monitoring using Jenkins, Kubernetes, and Kibana.",
     tools: [
       "Java",
       "SpringBoot",
@@ -90,14 +89,11 @@ export const experiences: Experience[] = [
       "Next",
     ],
     description:
-      "Starting as an intern, I had the opportunity to familiarize myself with the basic concepts of software development and gained a " +
-      "fundamental understanding of programming practices. I worked on Pix payment integration and developing features for " +
-      "a property viewing tracking system. Within a few months, I was hired full-time, and this stage of my career focused on being versatile " +
-      "to acquire varied skills. During this time, I took on the responsibility of improving my user interface creation and enhanced " +
-      "my frontend skills, while having more solid impacts on the backend. It was during this phase that I acquired most of my knowledge in " +
-      "Javascript and React. After being promoted to Developer, I specialized in frontend, with an emphasis on React and TypeScript. In this career phase, " +
-      "I contributed to the development of high-impact features, leading discoveries and strategic planning. I had my first " +
-      "experiences with Flutter.",
+      "Progressed from intern to Software Engineer, leading frontend development initiatives. " +
+      "Implemented Pix payment integration and property viewing tracking system. " +
+      "Specialized in React and TypeScript development, creating high-impact features. " +
+      "Led technical discoveries and strategic planning for new products. " +
+      "Expanded technical expertise to mobile development with Flutter.",
     duration: "4 years",
   },
   {
@@ -105,10 +101,9 @@ export const experiences: Experience[] = [
     companyDescription: "Betting and iGaming",
     position: "Software Engineer",
     description:
-      "Developed dynamic interfaces, creating screens and dynamic pages from protobuf contracts, using " +
-      "the GRPC pattern for requests, ensuring higher scalability and performance in server communication. " +
-      "Developed a Know Your Customer (KYC) flow for both mobile and web, integrated with facial " +
-      "recognition tools to prevent fraud.",
+      "Architected dynamic interfaces using protobuf contracts and gRPC, optimizing server communication. " +
+      "Implemented a comprehensive KYC flow with facial recognition integration for fraud prevention. " +
+      "Developed cross-platform solutions for both web and mobile applications.",
     tools: ["React", "JavaScript", "TypeScript", "Flutter", "Next"],
     duration: "4 months"
   },

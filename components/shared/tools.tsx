@@ -67,7 +67,6 @@ const iconMapper: Record<Tool, ComponentType<SvgIconProps>> = {
   Firebase: SiFirebase,
   Next: RiNextjsFill,
   C: SiC
-  // TO-DO: add more icons
 };
 
 const getIcon = (tool: Tool): ComponentType<SvgIconProps> => {

@@ -9,7 +9,7 @@ type DegreeProps = {
 
 export function Degree({ degree }: DegreeProps) {
   return (
-    <Stack width={"40%"} bgcolor={Colors.backgroundLight} p={3} borderRadius={3}>
+    <Stack flex={1}>
       <Stack pb={2}>
         <Typography variant="h3" sx={{color: Colors.purpleLightest}}>
           {degree.course}

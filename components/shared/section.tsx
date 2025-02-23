@@ -1,29 +1,22 @@
-import { Colors } from "@/app/colors";
-import { Box, Stack } from "@mui/material";
-import { Typography } from "./typography";
+import { Stack } from "@mui/material";
 import { Section as SectionType } from "../sections";
+import { TypographyV2 } from "./typographyV2";
 
 type SectionProps = {
   sectionProps: SectionType;
-  title: string;
-  children: JSX.Element;
-  subSection?: boolean;
+  index: number;
 };
 
 export function Section({
-  title,
-  children,
-  subSection = false,
   sectionProps,
+  index
 }: SectionProps) {
   return (
-    <Stack>
+    <Stack gap={3}>
       {sectionProps?.title && (
-        <Typography variant="h1" color={Colors.primary}>
-          {sectionProps.title}
-        </Typography>
+        <TypographyV2 variant="sectionTitle">{sectionProps.title}</TypographyV2>
       )}
-      {children}
+      <sectionProps.component/>
     </Stack>
   );
 }

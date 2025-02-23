@@ -11,20 +11,22 @@ import { Colors } from "@/app/colors";
 
 export function About() {
   return (
-    <Stack gap={2}>
+    <Stack gap={1}>
       <SubSection title="Degrees">
         <Stack direction="row" gap={1} justifyContent={"space-between"}>
           {degrees.map((degree, index) => (
             <Degree key={index} degree={degree} />
           ))}
         </Stack>
-        <Typography variant="h2">Experiences</Typography>
+      </SubSection>
+      <SubSection title="Experiences">
         {experiences.map((experience, index) => (
-          <Box py={2} key={index}>
+          <Box pb={3} key={index}>
             <Experience experience={experience} />
           </Box>
         ))}
-        <Typography variant="h2">Languages and frameworks</Typography>
+      </SubSection>
+      <SubSection title="Languages and frameworks">
         <Stack
           direction={"row"}
           gap={1}
@@ -34,10 +36,16 @@ export function About() {
           justifyContent="space-evenly"
         >
           {languagesAndFrameworks.map((item, index) => (
-            <Tool tool={item} key={index} iconColor={Colors.purpleLightest} />
+            <Tool
+              tool={item}
+              key={index}
+              iconColor={Colors.accent}
+              textProps={{ fontWeight: "bold" }}
+            />
           ))}
         </Stack>
-        <Typography variant="h2">Ramping up</Typography>
+      </SubSection>
+      <SubSection title="Ramping up">
         <Stack
           direction={"row"}
           gap={1}
@@ -47,7 +55,12 @@ export function About() {
           justifyContent="space-evenly"
         >
           {rampingUp.map((item, index) => (
-            <Tool key={index} tool={item} iconColor={Colors.purpleLightest} />
+            <Tool
+              tool={item}
+              key={index}
+              iconColor={Colors.accent}
+              textProps={{ fontWeight: "bold" }}
+            />
           ))}
         </Stack>
       </SubSection>

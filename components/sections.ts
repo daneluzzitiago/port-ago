@@ -22,7 +22,6 @@ export const Sections: Section[] = [
     buttonLabel: "Home",
     icon: Home,
     component: Hero,
-    nextSectionButtonLabel: "More about me",
   },
   {
     name: "about",

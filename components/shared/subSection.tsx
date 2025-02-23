@@ -1,5 +1,6 @@
-import { Stack } from "@mui/material";
-import { Typography } from "./typography";
+import { Stack, Box } from "@mui/material";
+import { TypographyV2 } from "./typographyV2";
+import { Colors } from "@/app/colors";
 
 type SubSectionProps = {
   title: string;
@@ -9,9 +10,11 @@ type SubSectionProps = {
 
 export function SubSection({ children, title, subtitle }: SubSectionProps) {
   return (
-    <Stack gap={2}>
-      <Typography variant="h2">{title}</Typography>
-      {subtitle && <Typography variant="h3">{subtitle}</Typography>}
+    <Stack gap={2} bgcolor={Colors.backgroundLight} p={2} borderRadius={1}>
+      <Stack>
+        <TypographyV2 variant="sectionSubtitle">{title}</TypographyV2>
+      </Stack>
+      {subtitle && <TypographyV2 variant="subtopic">{subtitle}</TypographyV2>}
       {children}
     </Stack>
   );
