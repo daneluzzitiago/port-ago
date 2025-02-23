@@ -18,25 +18,11 @@ export const projects: Project[] = [
 
   },
   {
-    title: "Pequenos Passos",
-    description: "Habit tracking application.",
-    url: "https://github.com/daneluzzitiago/pequenos_passos",
-    tools: ["Flutter"],
-    isWorkInProgress: true,
-  },
-  {
     title: "Google Login",
     description:
       "Simple tutorial demonstrating Google authentication implementation in web applications.",
     url: "https://github.com/daneluzzitiago/google-login",
     tools: ["JavaScript", "Firebase"]
-  },
-  {
-    title: "Node backend",
-    description: "Work in progress backend application.",
-    url: "https://github.com/daneluzzitiago/node_backend",
-    tools: ["Nodejs", "JavaScript"],
-    isWorkInProgress: true,
   },
   {
     title: "Port Ago",
@@ -46,24 +32,11 @@ export const projects: Project[] = [
     tools: ["React", "TypeScript", "Next"],
   },
   {
-    title: "Nade Manager",
-    description: "FPS team management simulation game.",
-    url: "https://github.com/daneluzzitiago/nade-manager",
-    tools: ["React", "TypeScript", "Next"],
-    isWorkInProgress: true,
-  },
-  {
     title: "CSGO - Game State Listener",
     description:
       "My final thesis project. An application that listens to CSGO match state changes, identifies events, and records them along with map coordinates (X,Y) to create event heatmaps.",
     url: "https://github.com/daneluzzitiago/csgo-gamestate-integration",
     tools: ["Nodejs", "JavaScript"],
-  },
-  {
-    title: "Desk Chess",
-    description: "Chess game developed during my undergraduate studies.",
-    url: "https://github.com/daneluzzitiago/desk_chess",
-    tools: ["Java"]
   },
   {
     title: "Herois de mesa",
