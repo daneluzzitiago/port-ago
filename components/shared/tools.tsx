@@ -66,12 +66,12 @@ const iconMapper: Record<Tool, ComponentType<SvgIconProps>> = {
   MySQL: DiMysql,
   Firebase: SiFirebase,
   Next: RiNextjsFill,
-  C: SiC
+  C: SiC,
 };
 
 const getIcon = (tool: Tool): ComponentType<SvgIconProps> => {
   const Icon = iconMapper[tool];
-  if(!Icon) {
+  if (!Icon) {
     throw new Error(`Icon not found for tool: ${tool}`);
   }
   return Icon;
@@ -102,8 +102,17 @@ export function Tool({
       gap={1}
       direction={inLine ? "row" : "column"}
     >
-      <Icon size={iconSize} color={iconColor}/>
-      <Typography {...textProps} color={labelColor}>{tool}</Typography>
+      <Icon
+        style={{
+          color: iconColor,
+          fontSize: iconSize,
+          width: iconSize,
+          height: iconSize,
+        }}
+      />
+      <Typography {...textProps} color={labelColor}>
+        {tool}
+      </Typography>
     </Stack>
   );
 }
