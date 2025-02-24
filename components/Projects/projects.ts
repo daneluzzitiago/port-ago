@@ -32,6 +32,13 @@ export const projects: Project[] = [
     tools: ["React", "TypeScript", "Next"],
   },
   {
+    title: "Blackjack - GA",
+    description:
+      "Genetic Algorithm application that learns to play Blackjack and develops a decision matrix based on player cards. Developed during my Evolutionary Algorithms course.",
+    url: "https://github.com/daneluzzitiago/21_evolutivo",
+    tools: ["C"]
+  },
+  {
     title: "CSGO - Game State Listener",
     description:
       "My final thesis project. An application that listens to CSGO match state changes, identifies events, and records them along with map coordinates (X,Y) to create event heatmaps.",
@@ -49,12 +56,5 @@ export const projects: Project[] = [
     description: "Tetris game implementation created during my undergraduate studies.",
     url: "https://github.com/daneluzzitiago/tetris",
     tools: ["Java"]
-  },
-  {
-    title: "Blackjack - GA",
-    description:
-      "Genetic Algorithm application that learns to play Blackjack and develops a decision matrix based on player cards. Developed during my Evolutionary Algorithms course.",
-    url: "https://github.com/daneluzzitiago/21_evolutivo",
-    tools: ["C"]
   },
 ];
