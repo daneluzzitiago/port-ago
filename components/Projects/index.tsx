@@ -1,17 +1,17 @@
-import { Box, ButtonBase, Stack } from "@mui/material";
-import { Typography } from "@/components/shared/typography";
+import { Grid2 as Grid, Stack } from "@mui/material";
 import { projects } from "./projects";
-import { Tool } from "../shared/tools";
-import { FaGithub } from "react-icons/fa";
-import { Colors } from "@/app/colors";
 import { ProjectCard } from "./projectCard";
 
 export function Projects() {
   return (
     <Stack direction="row" gap={4} flexWrap="wrap">
-      {projects.map((project, index) => (
-        <ProjectCard project={project} key={index}/>
-      ))}
+      <Grid container spacing={4}>
+        {projects.map((project, index) => (
+          <Grid size={{ xs: 12, md: 6, lg: 4 }} key={index}>
+            <ProjectCard project={project} />
+          </Grid>
+        ))}
+      </Grid>
     </Stack>
   );
 }

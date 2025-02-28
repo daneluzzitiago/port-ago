@@ -36,12 +36,25 @@ const Button = (kind: ButtonKind, url: string) => (
 );
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const projectPreviewCardProps = {
+    width: "100%",
+    height: 169,
+    borderRadius: 1,
+  };
+
   return (
     <Card
       sx={{
         backgroundColor: Colors.backgroundLight,
-        maxWidth: 370,
         padding: 2,
+        boxShadow: `1px 1px 10px ${Colors.purpleLighter}40`,
+        borderRadius: 1,
+        transition: "all 0.3s ease-in-out",
+        transform: "translateY(0)",
+        "&:hover": {
+          boxShadow: `5px 5px 10px ${Colors.purpleLighter}60`,
+          transform: "translateY(-8px) scale(1.02)",
+        },
       }}
     >
       <Stack
@@ -57,22 +70,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
             src={project.imgPath}
             alt={`${project.title} preview`}
             sx={{
-              width: "100%",
-              maxWidth: 300,
-              height: "auto",
+              objectFit: "cover",
+              objectPosition: "center",
+              ...projectPreviewCardProps,
             }}
           />
         ) : (
           <Box
             sx={{
-              width: "100%",
-              maxWidth: 300,
-              height: 169, // 16:9 aspect ratio
               bgcolor: Colors.purpleDark,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              borderRadius: 1,
+              ...projectPreviewCardProps
             }}
           >
             <Typography variant="h3" color={Colors.purpleLightest}>
@@ -94,7 +104,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               />
             ))}
           </Box>
-          <Stack direction="row" gap={1}>
+          <Stack direction="row" gap={1} justifyContent="center" pt={2}>
             {project.projectUrl && Button("project", project.projectUrl)}
             {project.githubUrl && Button("github", project.githubUrl)}
           </Stack>

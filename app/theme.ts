@@ -7,7 +7,6 @@ export const theme = createTheme({
     fontFamily: [
       "Inter",
     ].join(","),
-    // This ensures consistent color across all variants
     allVariants: {
       color: Colors.text,
     },
