@@ -10,7 +10,7 @@ type ExperienceProps = {
 
 export function Experience({ experience }: ExperienceProps) {
   return (
-    <Stack gap={1} bgcolor={Colors.backgroundLight} borderRadius={3}>
+    <Stack gap={1}>
       <Stack>
         <Stack direction="row" spacing={5}>
           <Stack>

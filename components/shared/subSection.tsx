@@ -10,7 +10,7 @@ type SubSectionProps = {
 
 export function SubSection({ children, title, subtitle }: SubSectionProps) {
   return (
-    <Stack gap={2} bgcolor={Colors.backgroundLight} p={2} borderRadius={1}>
+    <Stack gap={2} bgcolor={`${Colors.backgroundLight}70`} p={2} borderRadius={1}>
       <Stack>
         <TypographyV2 variant="subsectionTitle">{title}</TypographyV2>
       </Stack>

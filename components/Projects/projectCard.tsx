@@ -21,7 +21,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Card
       sx={{
-        backgroundColor: Colors.backgroundLight,
+        backgroundColor: `${Colors.backgroundLight}70`,
         padding: 2,
         boxShadow: `1px 1px 10px ${Colors.purpleLighter}40`,
         borderRadius: 1,

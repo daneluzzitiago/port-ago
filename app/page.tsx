@@ -4,8 +4,8 @@ import { Box, Stack } from "@mui/material";
 import "./global.css";
 import { Menu } from "@/components/menu";
 import { Sections } from "@/components/sections";
-import { Colors } from "./colors";
 import { Section } from "@/components/shared/section";
+import { Colors } from "./colors";
 
 export default function Home() {
   return (

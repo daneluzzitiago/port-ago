@@ -8,6 +8,7 @@ import { Degree } from "./degree";
 import { SubSection } from "../shared/subSection";
 import { Colors } from "@/app/colors";
 import { useMemo } from "react";
+import { FloatingExp } from "../shared/floatingExp";
 
 export function About() {
   const reversedExperiences = useMemo(() => [...experiences].reverse(), []);
@@ -35,7 +36,6 @@ export function About() {
         <Stack
           direction={"row"}
           gap={1}
-          bgcolor={Colors.backgroundLight}
           p={3}
           borderRadius={3}
           justifyContent="space-evenly"
@@ -55,20 +55,24 @@ export function About() {
       <SubSection title="Ramping up">
         <Stack
           direction={"row"}
-          gap={1}
-          bgcolor={Colors.backgroundLight}
+          gap={3}
           p={3}
           borderRadius={3}
-          justifyContent="space-evenly"
+          justifyContent="center"
           flexWrap="wrap"
         >
           {rampingUp.map((item, index) => (
-            <Tool
-              tool={item}
-              key={index}
-              iconColor={Colors.accent}
-              textProps={{ fontWeight: "bold" }}
-            />
+            <FloatingExp 
+              key={index} 
+              index={index}
+              totalItems={rampingUp.length}
+            >
+              <Tool
+                tool={item}
+                iconColor={Colors.accent}
+                textProps={{ fontWeight: "bold" }}
+              />
+            </FloatingExp>
           ))}
         </Stack>
       </SubSection>
