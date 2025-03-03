@@ -1,4 +1,4 @@
-import { Button as MuiButton, ButtonProps } from '@mui/material';
+import { Button as MuiButton, ButtonProps, SxProps } from '@mui/material';
 import { Colors } from "@/app/colors";
 import { ReactNode } from 'react';
 
@@ -85,7 +85,7 @@ export const buttonVariants: Record<ButtonVariant, ButtonProps> = {
 type CustomButtonProps = Omit<ButtonProps, 'variant'> & {
   variant?: ButtonVariant;
   children: ReactNode;
-  sx?: any;
+  sx?: SxProps<Theme>;
   onClick?: () => void;
 };
 

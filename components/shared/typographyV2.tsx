@@ -1,5 +1,5 @@
 import { Colors } from "@/app/colors";
-import { TypographyProps, Typography } from "@mui/material";
+import { TypographyProps, Typography, SxProps, Theme } from "@mui/material";
 
 export type CustomVariant =
   | "menuItem"
@@ -153,7 +153,7 @@ type TypographyV2Props = {
   variant: CustomVariant;
   children: React.ReactNode;
   className?: string;
-  sx?: any;
+  sx?: SxProps<Theme>;
 };
 
 export function TypographyV2({

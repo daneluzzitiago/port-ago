@@ -11,7 +11,7 @@ import {
 } from "react-icons/si";
 import { FaCss3, FaHtml5, FaJava, FaPython } from "react-icons/fa";
 import { FaFlutter } from "react-icons/fa6";
-import { Stack, SvgIconProps, Typography } from "@mui/material";
+import { Stack, SvgIconProps, Typography, TypographyProps } from "@mui/material";
 import { ComponentType } from "react";
 import { DiMysql, DiPostgresql } from "react-icons/di";
 import { RiNextjsFill } from "react-icons/ri";
@@ -41,7 +41,7 @@ type ToolProps = {
   iconSize?: number;
   borderRadius?: number;
   inLine?: boolean;
-  textProps?: any;
+  textProps?: TypographyProps;
   padding?: number;
   border?: number;
   iconColor?: string;

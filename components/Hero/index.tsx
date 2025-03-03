@@ -16,7 +16,7 @@ export function Hero() {
         <Stack justifyContent={"center"} flex={1} gap={4}>
           <Stack>
             <TypographyV2 variant="heroTitle">
-              Hello, I'm{" "}
+              {"Hello, I'm"}{" "}
               <Box component="span" sx={typographyVariants.heroTitleHighlight}>
                 Tiago L. Daneluzzi
               </Box>
@@ -28,7 +28,7 @@ export function Hero() {
           </Stack>
           <Stack>
             <TypographyV2 variant="heroSubtitle">
-              I'm a{" "}
+              {"I'm a"}{" "}
               <Box
                 component="span"
                 sx={typographyVariants.heroSubtitleHighlight}
