@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <Stack spacing={0} bgcolor={Colors.background}>
       <Menu sections={Sections} />
-      {Sections.map((section, index) => (
+      {Sections.map((section) => (
         <Box
           key={section.name}
           minHeight="95vh"
@@ -21,7 +21,7 @@ export default function Home() {
           alignItems={"center"}
           justifyContent={"center"}
         >
-          <Section sectionProps={section} index={index} />
+          <Section sectionProps={section}/>
         </Box>
       ))}
     </Stack>

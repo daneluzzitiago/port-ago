@@ -1,4 +1,4 @@
-import { Button as MuiButton, ButtonProps, SxProps } from '@mui/material';
+import { Button as MuiButton, ButtonProps, SxProps, Theme } from '@mui/material';
 import { Colors } from "@/app/colors";
 import { ReactNode } from 'react';
 
@@ -95,13 +95,15 @@ export function Button({
   onClick,
   sx
 }: CustomButtonProps) {
+  const sxProps = {
+    ...buttonVariants[variant].sx,
+    ...sx,
+  };
+
   return (
     <MuiButton
       {...buttonVariants[variant]}
-      sx={{
-        ...buttonVariants[variant].sx,
-        ...sx,
-      }}
+      sx={sxProps}
       onClick={onClick}
     >
       {children}
