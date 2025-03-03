@@ -7,6 +7,7 @@ export type Experience = {
   description?: string;
   tools?: Tool[];
   duration?: string;
+  iconPath: string;
 };
 
 export const experiences: Experience[] = [
@@ -20,6 +21,7 @@ export const experiences: Experience[] = [
       "for frontend development.",
     tools: ["RubyOnRails", "HTML", "CSS"],
     duration: "2 months (2019)",
+    iconPath: "dog-hero.svg",
   },
   {
     companyName: "Responde Aí",
@@ -28,6 +30,7 @@ export const experiences: Experience[] = [
     description:
       "Engagement and sales campaign for the online teaching platform focused on STEM higher education courses.",
     duration: "3 months (2019)",
+    iconPath: "responde-ai.svg",
   },
   {
     companyName: "Stoq",
@@ -37,6 +40,7 @@ export const experiences: Experience[] = [
       "Development of open-source multi-platform ERP using Python, React JS, and PostgreSQL. Level 2 customer support.",
     tools: ["Python", "JavaScript", "React", "Postgres", "Redux"],
     duration: "7 months (2019)",
+    iconPath: "stoq.svg",
   },
   {
     companyName: "B2W",
@@ -48,6 +52,7 @@ export const experiences: Experience[] = [
       "Management, and Agile methodologies. API integration between TBP, Trello, Google Drive, and others through webhooks.",
     tools: ["Python"],
     duration: "2 months (2020)",
+    iconPath: "b2w.svg",
   },
   {
     companyName: "Monitora",
@@ -68,6 +73,8 @@ export const experiences: Experience[] = [
       "Redux",
     ],
     duration: "9 months (2020)",
+    iconPath: "monitora.svg",
+    
   },
   {
     companyName: "Quinto Andar",
@@ -94,6 +101,7 @@ export const experiences: Experience[] = [
       "Led technical discoveries and strategic planning for new products. " +
       "Expanded technical expertise to mobile development with Flutter.",
     duration: "4 years (2020-2024)",
+    iconPath: "quinto-andar.svg",
   },
   {
     companyName: "Rei do Pitaco",
@@ -104,6 +112,7 @@ export const experiences: Experience[] = [
       "Implemented a comprehensive KYC flow with facial recognition integration for fraud prevention. " +
       "Developed cross-platform solutions for both web and mobile applications.",
     tools: ["React", "JavaScript", "TypeScript", "Flutter", "Next"],
-    duration: "4 months (2024- 2025)"
+    duration: "4 months (2024- 2025)",
+    iconPath: "rei-do-pitaco.svg",
   },
 ];

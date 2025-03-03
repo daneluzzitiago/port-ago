@@ -67,7 +67,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </Box>
         )}
         <Stack gap={1}>
-          <TypographyV2 variant="topic">{project.title}</TypographyV2>
+          <TypographyV2 variant="topic" sx={{color: Colors.purpleLightest}}>{project.title}</TypographyV2>
           <TypographyV2 variant="body">{project.description}</TypographyV2>
           <Box display="flex" gap={1} flexWrap="wrap" justifyContent="center">
             {project.tools.map((tool, index) => (
