@@ -4,12 +4,10 @@ import { TypographyV2 } from "./typographyV2";
 
 type SectionProps = {
   sectionProps: SectionType;
-  index: number;
 };
 
 export function Section({
   sectionProps,
-  index
 }: SectionProps) {
   return (
     <Stack gap={3}>

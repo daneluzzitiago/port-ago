@@ -9,9 +9,9 @@ export type CustomVariant =
   | "heroSubtitleHighlight"
   | "heroCta"
   | "sectionTitle"
-  | "sectionSubtitle"
+  | "subsectionTitle"
   | "topic"
-  | "subtopic"
+  | "topicSubtitle"
   | "body"
   | "bodySecondary"
   | "date"
@@ -22,15 +22,10 @@ export type CustomVariant =
 export const typographyVariants: Record<CustomVariant, TypographyProps> = {
   menuItem: {
     fontSize: "0.875rem",
-    fontWeight: 500,
+    fontWeight: 700,
     color: Colors.text,
     textTransform: "uppercase",
     letterSpacing: "0.05em",
-    sx: {
-      "&:hover": {
-        color: Colors.purpleLight,
-      },
-    },
   },
 
   heroTitle: {
@@ -38,29 +33,20 @@ export const typographyVariants: Record<CustomVariant, TypographyProps> = {
       xs: "2.5rem",
       md: "3.75rem",
     },
-    fontWeight: 700,
+    fontWeight: 400,
     color: Colors.white,
     lineHeight: 1.2,
     letterSpacing: "-0.02em",
   },
 
   heroTitleHighlight: {
-    fontSize: "inherit",
-    fontWeight: 700,
-    color: Colors.purpleLight,
-    position: "relative",
-    sx: {
-      "&::after": {
-        content: '""',
-        position: "absolute",
-        bottom: "-4px",
-        left: 0,
-        width: "100%",
-        height: "2px",
-        background: Colors.purpleLight,
-        opacity: 0.3,
-      },
+    fontSize: {
+      xs: "2.5rem",
+      md: "3.75rem",
     },
+    fontWeight: 700,
+    color: Colors.purpleLightest,
+    lineHeight: 1.2,
   },
 
   heroSubtitle: {
@@ -69,73 +55,56 @@ export const typographyVariants: Record<CustomVariant, TypographyProps> = {
       md: "1.5rem",
     },
     fontWeight: 400,
-    color: Colors.gray,
+    color: Colors.grayLight,
     lineHeight: 1.6,
   },
 
   heroSubtitleHighlight: {
-    fontSize: "inherit",
-    fontWeight: 500,
+    fontSize: {
+      xs: "1.25rem",
+      md: "1.5rem",
+    },
+    fontWeight: 700,
     color: Colors.accent,
-    fontStyle: "italic",
+    lineHeight: 1.6,
   },
 
   heroCta: {
-    fontSize: "1rem",
+    fontSize: "1.5rem",
     fontWeight: 600,
+    letterSpacing: "0.05em",
+    textTransform: "uppercase",
     color: Colors.white,
-    textTransform: "none",
-    letterSpacing: "0.02em",
   },
 
   sectionTitle: {
-    fontSize: {
-      xs: "2rem",
-      md: "2.5rem",
-    },
+    fontSize: "1.75rem",
     fontWeight: 700,
     color: Colors.white,
-    marginBottom: "1rem",
-    position: "relative",
-    sx: {
-      "&::after": {
-        content: '""',
-        position: "absolute",
-        bottom: "-8px",
-        left: 0,
-        width: "60px",
-        height: "4px",
-        background: Colors.primary,
-        borderRadius: "2px",
-      },
-    },
   },
 
-  sectionSubtitle: {
-    fontSize: "1.5rem",
-    fontWeight: 600,
-    color: Colors.purpleLightest,
-    marginBottom: "1.5rem",
+  subsectionTitle: {
+    fontSize: "1.25rem",
+    fontWeight: 700,
+    color: Colors.purpleLighter,
   },
 
   topic: {
-    fontSize: "1.25rem",
-    fontWeight: 500,
-    color: Colors.purpleLighter,
-    marginBottom: "0.5rem",
+    fontSize: "1.10rem",
+    fontWeight: 600,
+    color: Colors.grayLight,
   },
 
-  subtopic: {
-    fontSize: "1.125rem",
+  topicSubtitle: {
+    fontSize: "0.9rem",
     fontWeight: 400,
-    color: Colors.text,
-    marginBottom: "0.25rem",
+    color: Colors.accent,
   },
 
   body: {
     fontSize: "1rem",
     fontWeight: 400,
-    color: Colors.text,
+    color: Colors.grayLight,
     lineHeight: 1.6,
   },
 
@@ -165,18 +134,18 @@ export const typographyVariants: Record<CustomVariant, TypographyProps> = {
 
   buttonPrimary: {
     fontSize: "0.875rem",
-    fontWeight: 600,
+    fontWeight: 700,
     color: Colors.white,
-    textTransform: "none",
-    letterSpacing: "0.02em",
+    letterSpacing: "0.05em",
+    textTransform: "uppercase",
   },
 
   buttonSecondary: {
     fontSize: "0.875rem",
     fontWeight: 500,
     color: Colors.text,
-    textTransform: "none",
-    letterSpacing: "0.02em",
+    letterSpacing: "0.05em",
+    textTransform: "uppercase",
   },
 };
 

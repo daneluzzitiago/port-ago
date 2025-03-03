@@ -20,7 +20,7 @@ export const experiences: Experience[] = [
       "that offers pet services. Used Ruby on Rails and SQL for backend development, while learning HTML and CSS " +
       "for frontend development.",
     tools: ["RubyOnRails", "HTML", "CSS"],
-    duration: "2 months",
+    duration: "2 months (2019)",
   },
   {
     companyName: "Responde Aí",
@@ -28,7 +28,7 @@ export const experiences: Experience[] = [
     position: "Brand Ambassador at USP",
     description:
       "Engagement and sales campaign for the online teaching platform focused on STEM higher education courses.",
-    duration: "3 months",
+    duration: "3 months (2019)",
   },
   {
     companyName: "Stoq",
@@ -37,7 +37,7 @@ export const experiences: Experience[] = [
     description:
       "Development of open-source multi-platform ERP using Python, React JS, and PostgreSQL. Level 2 customer support.",
     tools: ["Python", "JavaScript", "React", "Postgres", "Redux"],
-    duration: "7 months",
+    duration: "7 months (2019)",
   },
   {
     companyName: "B2W",
@@ -48,7 +48,7 @@ export const experiences: Experience[] = [
       "Program mapping to identify repeated activities and points of highest value delivery. Use of Design Thinking, Product " +
       "Management, and Agile methodologies. API integration between TBP, Trello, Google Drive, and others through webhooks.",
     tools: ["Python"],
-    duration: "2 months",
+    duration: "2 months (2020)",
   },
   {
     companyName: "Monitora",
@@ -68,7 +68,7 @@ export const experiences: Experience[] = [
       "JavaScript",
       "Redux",
     ],
-    duration: "9 months",
+    duration: "9 months (2020)",
   },
   {
     companyName: "Quinto Andar",
@@ -94,7 +94,7 @@ export const experiences: Experience[] = [
       "Specialized in React and TypeScript development, creating high-impact features. " +
       "Led technical discoveries and strategic planning for new products. " +
       "Expanded technical expertise to mobile development with Flutter.",
-    duration: "4 years",
+    duration: "4 years (2020-2024)",
   },
   {
     companyName: "Rei do Pitaco",
@@ -105,6 +105,6 @@ export const experiences: Experience[] = [
       "Implemented a comprehensive KYC flow with facial recognition integration for fraud prevention. " +
       "Developed cross-platform solutions for both web and mobile applications.",
     tools: ["React", "JavaScript", "TypeScript", "Flutter", "Next"],
-    duration: "4 months"
+    duration: "4 months (2024- 2025)"
   },
 ];

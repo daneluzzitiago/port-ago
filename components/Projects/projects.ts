@@ -15,7 +15,7 @@ export const projects: Project[] = [
     title: "Gymbo",
     description:
       "Platform for creating and tracking workout performance in weight training.",
-    projectUrl: "gymbo.com.br",
+    projectUrl: "https://gymbo.com.br",
     tools: ["Firebase", "React", "TypeScript", "Next"],
     imgPath: "/gymbo.png",
   },

@@ -8,8 +8,11 @@ import { degrees } from "./degrees";
 import { Degree } from "./degree";
 import { SubSection } from "../shared/subSection";
 import { Colors } from "@/app/colors";
+import { useMemo } from "react";
 
 export function About() {
+  const reversedExperiences = useMemo(() => [...experiences].reverse(), []);
+
   return (
     <Stack gap={1}>
       <SubSection title="Degrees">
@@ -23,7 +26,7 @@ export function About() {
         </Stack>
       </SubSection>
       <SubSection title="Experiences">
-        {experiences.map((experience, index) => (
+        {reversedExperiences.map((experience, index) => (
           <Box pb={3} key={index}>
             <Experience experience={experience} />
           </Box>

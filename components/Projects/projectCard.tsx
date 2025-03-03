@@ -1,39 +1,15 @@
-import { Box, ButtonBase, Card, Stack } from "@mui/material";
+import { Box, Card, Stack } from "@mui/material";
 import { Project } from "./projects";
-import { Typography } from "../shared/typography";
+import { TypographyV2 } from "../shared/typographyV2";
 import { Tool } from "../shared/tools";
 import { Colors } from "@/app/colors";
 import { FaGithub } from "react-icons/fa";
 import { FaCirclePlay } from "react-icons/fa6";
+import { Button } from "../shared/button";
 
 type ProjectCardProps = {
   project: Project;
 };
-
-type ButtonKind = "github" | "project";
-
-const Button = (kind: ButtonKind, url: string) => (
-  <ButtonBase
-    sx={{
-      padding: 1,
-      gap: 1,
-      width: "fit-content",
-      bgcolor: kind === "github" ? Colors.gray : Colors.primary,
-    }}
-    onClick={() => window.open(url)}
-  >
-    <Typography
-      sx={{ color: kind === "project" ? Colors.white : Colors.background }}
-    >
-      {kind === "project" ? "demo" : "github"}
-    </Typography>
-    {kind === "project" ? (
-      <FaCirclePlay color={Colors.white} size={16} />
-    ) : (
-      <FaGithub color={Colors.background} size={16} />
-    )}
-  </ButtonBase>
-);
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const projectPreviewCardProps = {
@@ -82,31 +58,50 @@ export function ProjectCard({ project }: ProjectCardProps) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              ...projectPreviewCardProps
+              ...projectPreviewCardProps,
             }}
           >
-            <Typography variant="h3" color={Colors.purpleLightest}>
+            <TypographyV2 variant="topic">
               {project.title[0].toUpperCase()}
-            </Typography>
+            </TypographyV2>
           </Box>
         )}
         <Stack gap={1}>
-          <Typography variant="h2">{project.title}</Typography>
-          <Typography variant="body">{project.description}</Typography>
+          <TypographyV2 variant="topic">{project.title}</TypographyV2>
+          <TypographyV2 variant="body">{project.description}</TypographyV2>
           <Box display="flex" gap={1} flexWrap="wrap" justifyContent="center">
             {project.tools.map((tool, index) => (
               <Tool
                 key={index}
                 tool={tool}
                 textProps={{ variant: "caption" }}
-                iconColor={Colors.purpleLightest}
+                iconColor={Colors.accent}
                 iconSize={16}
               />
             ))}
           </Box>
           <Stack direction="row" gap={1} justifyContent="center" pt={2}>
-            {project.projectUrl && Button("project", project.projectUrl)}
-            {project.githubUrl && Button("github", project.githubUrl)}
+            {project.projectUrl && (
+              <Button variant="tertiary" onClick={() => window.open(project.projectUrl)}>
+                <FaCirclePlay color={Colors.purpleLightest} />
+                <Box p="4px" />
+                <TypographyV2
+                  variant="buttonPrimary"
+                  sx={{ color: Colors.purpleLightest }}
+                >
+                  Demo
+                </TypographyV2>
+              </Button>
+            )}
+            {project.githubUrl && (
+              <Button variant="tertiary" 
+                onClick={() => window.open(project.githubUrl)}
+              >
+                <FaGithub color={Colors.white} />
+                <Box p="4px" />
+                <TypographyV2 variant="buttonPrimary">Github</TypographyV2>
+              </Button>
+            )}
           </Stack>
         </Stack>
       </Stack>

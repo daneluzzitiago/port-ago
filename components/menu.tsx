@@ -1,61 +1,17 @@
 "use client";
 
-import { AppBar, Toolbar, Box, Button, SvgIconProps, Stack, IconButton, Drawer } from "@mui/material";
+import { AppBar, Toolbar, Box, Stack, IconButton, Drawer } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
-import { ComponentType, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Colors } from "@/app/colors";
 import { Section } from "./sections";
 import { TypographyV2 } from "./shared/typographyV2";
+import { Button } from "./shared/button";
 import { handleScroll } from "@/utils/scroll";
 
 type MenuProps = {
   sections: Section[];
 };
-
-type StyledMenuButtonProps = {
-  label: string;
-  Icon: ComponentType<SvgIconProps>;
-  sectionName: string;
-};
-
-const StyledMenuButton = ({
-  label,
-  Icon,
-  sectionName
-}: StyledMenuButtonProps) => (
-  <Button
-    sx={{
-      fontSize: "0.875rem",
-      fontWeight: 500,
-      color: Colors.text,
-      textTransform: "uppercase",
-      letterSpacing: "0.05em",
-      display: "flex",
-      gap: 1,
-      alignItems: "center",
-      transition: "all 0.2s ease-in-out",
-      "&:hover": {
-        color: Colors.purpleLight,
-        "& .MuiSvgIcon-root": {
-          color: Colors.purpleLight,
-        },
-        "& .MuiTypography-root": {
-          color: Colors.purpleLight,
-        },
-      },
-    }}
-    onClick={() => handleScroll(sectionName)}
-  >
-    <Icon
-      sx={{
-        fontSize: "1.5rem",
-        color: Colors.white,
-      }}
-    />
-    <TypographyV2 variant="heroCta">{label}</TypographyV2>
-  </Button>
-);
-
 export function Menu({ sections }: MenuProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -71,16 +27,18 @@ export function Menu({ sections }: MenuProps) {
   }, []);
 
   const menuItems = (
-    <Stack direction="column" gap={2} p={2}>
+    <>
       {sections.map((element: Section) => (
-        <StyledMenuButton
+        <Button
+          variant="tertiary"
           key={element.name}
-          sectionName={element.name}
-          label={element.buttonLabel}
-          Icon={element.icon}
-        />
+          onClick={() => handleScroll(element.name)}
+        >
+          {/* <element.icon /> */}
+          <TypographyV2 variant="menuItem">{element.buttonLabel}</TypographyV2>
+        </Button>
       ))}
-    </Stack>
+    </>
   );
 
   return (
@@ -95,56 +53,36 @@ export function Menu({ sections }: MenuProps) {
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between" }}>
-        <Box 
-          display="flex" 
-          alignItems="center"
-          gap={2}
-        >
-          <TypographyV2 
-            variant="sectionSubtitle" 
-            sx={{ margin: 0 }}
-          >
+        <Box display="flex" alignItems="center" gap={2}>
+          <TypographyV2 variant="subsectionTitle" sx={{ margin: 0 }}>
             {"port_ago"}
           </TypographyV2>
-          <TypographyV2 
-            className="cursor" 
-            variant="sectionSubtitle"
+          <TypographyV2
+            className="cursor"
+            variant="subsectionTitle"
             sx={{ margin: 0 }}
           >
             {">"}
           </TypographyV2>
         </Box>
-
-        {/* Desktop Menu */}
-        <Stack 
-          direction="row" 
-          gap={3} 
-          sx={{ 
-            display: { xs: 'none', md: 'flex' } 
+        <Stack
+          direction="row"
+          gap={3}
+          sx={{
+            display: { xs: "none", md: "flex" },
           }}
         >
-          {sections.map((element: Section) => (
-            <StyledMenuButton
-              key={element.name}
-              sectionName={element.name}
-              label={element.buttonLabel}
-              Icon={element.icon}
-            />
-          ))}
+          {menuItems}
         </Stack>
-
-        {/* Mobile Menu Button */}
         <IconButton
           sx={{
-            display: { xs: 'flex', md: 'none' },
-            color: Colors.white
+            display: { xs: "flex", md: "none" },
+            color: Colors.white,
           }}
           onClick={() => setMobileOpen(true)}
         >
           <MenuIcon />
         </IconButton>
-
-        {/* Mobile Menu Drawer */}
         <Drawer
           anchor="right"
           open={mobileOpen}
@@ -153,10 +91,12 @@ export function Menu({ sections }: MenuProps) {
             sx: {
               width: 240,
               bgcolor: Colors.backgroundLight,
-            }
+            },
           }}
         >
-          {menuItems}
+          <Stack direction="column" gap={2} p={2}>
+            {menuItems}
+          </Stack>
         </Drawer>
       </Toolbar>
     </AppBar>

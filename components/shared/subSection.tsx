@@ -12,9 +12,9 @@ export function SubSection({ children, title, subtitle }: SubSectionProps) {
   return (
     <Stack gap={2} bgcolor={Colors.backgroundLight} p={2} borderRadius={1}>
       <Stack>
-        <TypographyV2 variant="sectionSubtitle">{title}</TypographyV2>
+        <TypographyV2 variant="subsectionTitle">{title}</TypographyV2>
       </Stack>
-      {subtitle && <TypographyV2 variant="subtopic">{subtitle}</TypographyV2>}
+      {subtitle && <TypographyV2 variant="subsectionTitle">{subtitle}</TypographyV2>}
       {children}
     </Stack>
   );

@@ -1,5 +1,5 @@
 import { Stack } from "@mui/material";
-import { Typography } from "../shared/typography";
+import { TypographyV2 } from "../shared/typographyV2";
 import { Experience as ExperienceType } from "./experiences";
 import { Tool } from "../shared/tools";
 import { Colors } from "@/app/colors";
@@ -12,18 +12,22 @@ export function Experience({ experience }: ExperienceProps) {
   return (
     <Stack gap={1} bgcolor={Colors.backgroundLight} borderRadius={3}>
       <Stack>
-        <Stack direction="row" justifyContent="space-between" alignItems="center">
-          <Typography variant="h3" sx={{ fontWeight: 700 }}>
-            {experience.companyName}
-          </Typography>
-          <Typography variant="caption">{experience.duration}</Typography>
+        <Stack direction="row" spacing={5}>
+          <Stack>
+            <TypographyV2 variant="topic">
+              {experience.companyName}
+            </TypographyV2>
+            <TypographyV2 variant="topicSubtitle">
+              {experience.companyDescription}
+            </TypographyV2>
+          </Stack>
+          <TypographyV2 variant="date">{experience.duration}</TypographyV2>
         </Stack>
-        <Typography variant="caption" sx={{color: Colors.purpleLight}}>{experience.companyDescription}</Typography>
       </Stack>
-      <Typography variant="p">{experience.position}</Typography>
-      <Typography variant="body" textAlign={"justify"}>
+      <TypographyV2 variant="bodySecondary">{experience.position}</TypographyV2>
+      <TypographyV2 variant="body">
         {experience.description}
-      </Typography>
+      </TypographyV2>
       <Stack direction={"row"} spacing={1} flexWrap="wrap" gap={1}>
         {experience.tools?.map((tool, index) => (
           <Tool
@@ -35,8 +39,8 @@ export function Experience({ experience }: ExperienceProps) {
             textProps={{ variant: "body2" }}
             padding={0.5}
             backgroundColor={Colors.purpleDark}
-            iconColor={Colors.purpleLightest}
-            labelColor={Colors.purpleLightest}
+            iconColor={Colors.white}
+            labelColor={Colors.white}
           />
         ))}
       </Stack>

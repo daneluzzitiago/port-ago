@@ -1,7 +1,8 @@
 import { Colors } from "@/app/colors";
 import { Box, Stack, ButtonBase } from "@mui/material";
-import { TypographyV2 } from "../shared/typographyV2";
+import { TypographyV2, typographyVariants } from "../shared/typographyV2";
 import { handleScroll } from "@/utils/scroll";
+import { Button } from "../shared/button";
 
 export function Hero() {
   return (
@@ -17,11 +18,11 @@ export function Hero() {
           <Stack>
             <TypographyV2 variant="heroTitle">
               Hello, I'm{" "}
-              <Box component="span" color={Colors.primary}>
+              <Box component="span" sx={typographyVariants.heroTitleHighlight}>
                 Tiago L. Daneluzzi
               </Box>
               , but you can call me{" "}
-              <Box component="span" color={Colors.primary}>
+              <Box component="span" sx={typographyVariants.heroTitleHighlight}>
                 Dan
               </Box>
             </TypographyV2>
@@ -31,8 +32,7 @@ export function Hero() {
               I'm a{" "}
               <Box
                 component="span"
-                color={Colors.accent}
-                sx={{ fontWeight: 600 }}
+                sx={typographyVariants.heroSubtitleHighlight}
               >
                 Full Stack Developer
               </Box>
@@ -57,22 +57,11 @@ export function Hero() {
         </Stack>
       </Box>
       <Box display={{ xs: "none", md: "flex" }} pt={20}>
-        <ButtonBase
-          sx={{
-            borderColor: Colors.white,
-            borderRadius: 1,
-            borderStyle: "solid",
-            borderWidth: 1,
-            padding: 3,
-            "&:hover": {
-              backgroundColor: Colors.primary,
-              borderColor: Colors.primary,
-            },
-          }}
-          onClick={() => handleScroll("about")}
-        >
-          <TypographyV2 variant="heroCta">More about me</TypographyV2>
-        </ButtonBase>
+        <Button onClick={() => handleScroll("about")}>
+          <Box p={2}>
+            <TypographyV2 variant="heroCta">More about me</TypographyV2>
+          </Box>
+        </Button>
       </Box>
     </Stack>
   );
