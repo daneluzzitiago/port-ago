@@ -19,7 +19,7 @@ export function About() {
         <Stack sx={{flexDirection: {
           xs: "column",
           sm: "row"
-        }}} gap={1} justifyContent={"space-between"}>
+        }}} gap={5} justifyContent={"space-between"}>
           {degrees.map((degree, index) => (
             <Degree key={index} degree={degree} />
           ))}
