@@ -47,7 +47,7 @@ export function Menu({ sections }: MenuProps) {
       sx={{
         padding: 0,
         margin: 0,
-        bgcolor: isScrolled ? `${Colors.purpleDark}90` : "rgba(0,0,0,0)",
+        bgcolor: isScrolled ? Colors.purpleDark : "rgba(0,0,0,0)",
         transition: "background-color 0.3s ease-in-out",
         boxShadow: "none",
       }}
