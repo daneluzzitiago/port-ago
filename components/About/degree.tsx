@@ -1,6 +1,5 @@
 import { Stack } from "@mui/material";
 import { Degree as DegreeType } from "./degrees";
-import { Colors } from "@/app/colors";
 import { TypographyV2 } from "../shared/typographyV2";
 
 type DegreeProps = {

@@ -1,7 +1,6 @@
 import { Box, Stack } from "@mui/material";
 import { experiences } from "./experiences";
 import { Tool } from "../shared/tools";
-import { Typography } from "@/components/shared/typography";
 import { Experience } from "./experience";
 import { languagesAndFrameworks, rampingUp } from "./languagesAndFrameworks";
 import { degrees } from "./degrees";

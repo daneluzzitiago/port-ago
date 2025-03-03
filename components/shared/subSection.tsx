@@ -1,4 +1,4 @@
-import { Stack, Box } from "@mui/material";
+import { Stack } from "@mui/material";
 import { TypographyV2 } from "./typographyV2";
 import { Colors } from "@/app/colors";
 

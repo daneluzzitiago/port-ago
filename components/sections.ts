@@ -1,11 +1,9 @@
-import { Face6, Web, Park, Article, Home } from "@mui/icons-material";
+import { Face6, Web, Home } from "@mui/icons-material";
 import { Hero } from "./Hero";
 import { ComponentType } from "react";
 import { SvgIconProps } from "@mui/material";
 import { About } from "./About";
 import { Projects } from "./Projects";
-import { BeyondTech } from "./BeyondTech";
-import { Resume } from "./Resume";
 
 export type Section = {
   name: string;

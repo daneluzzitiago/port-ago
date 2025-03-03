@@ -1,5 +1,4 @@
-import { Colors } from "@/app/colors";
-import { Stack, Typography } from "@mui/material";
+import { Stack } from "@mui/material";
 
 export function Resume() {
   return (

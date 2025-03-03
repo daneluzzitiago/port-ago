@@ -1,5 +1,4 @@
-import { Colors } from "@/app/colors";
-import { Box, Stack, ButtonBase } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import { TypographyV2, typographyVariants } from "../shared/typographyV2";
 import { handleScroll } from "@/utils/scroll";
 import { Button } from "../shared/button";

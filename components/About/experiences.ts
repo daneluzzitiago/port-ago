@@ -1,4 +1,3 @@
-import { duration } from "@mui/material";
 import { Tool } from "../shared/tools";
 
 export type Experience = {

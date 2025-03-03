@@ -6,9 +6,11 @@ type ProjectToolsProps = {
 };
 
 export function ProjectTools({ tools }: ProjectToolsProps) {
-  return <>{tools.map(tool => (
-    <Box>
-      {tool}
-    </Box>
-  ))}</>;
+  return (
+    <>
+      {tools.map((tool, index) => (
+        <Box key={index}>{tool}</Box>
+      ))}
+    </>
+  );
 }
