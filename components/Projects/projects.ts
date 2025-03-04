@@ -35,6 +35,13 @@ export const projects: Project[] = [
     tools: ["React", "TypeScript", "Next"],
   },
   {
+    title: "Go, players!",
+    description:
+      "My first project using Golang. I don't know what it does yet, but it's related to e-sports!",
+    githubUrl: "https://github.com/daneluzzitiago/go-players",
+    tools: ["Go"],
+  },
+  {
     title: "Blackjack - GA",
     description:
       "Genetic Algorithm application that learns to play Blackjack and develops a decision matrix based on player cards. Developed during my Evolutionary Algorithms course.",

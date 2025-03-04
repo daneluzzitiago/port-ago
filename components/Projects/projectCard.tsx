@@ -76,7 +76,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 tool={tool}
                 textProps={{ variant: "caption" }}
                 iconColor={Colors.accent}
-                iconSize={16}
+                iconSize={24}
               />
             ))}
           </Box>

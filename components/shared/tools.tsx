@@ -10,7 +10,7 @@ import {
   SiC,
 } from "react-icons/si";
 import { FaCss3, FaHtml5, FaJava, FaPython } from "react-icons/fa";
-import { FaFlutter } from "react-icons/fa6";
+import { FaFlutter, FaGolang } from "react-icons/fa6";
 import { Stack, SvgIconProps, Typography, TypographyProps } from "@mui/material";
 import { ComponentType } from "react";
 import { DiMysql, DiPostgresql } from "react-icons/di";
@@ -34,7 +34,9 @@ export type Tool =
   | "MySQL"
   | "Postgres"
   | "Firebase"
-  | "C";
+  | "C"
+  | "Go"
+  ;
 
 type ToolProps = {
   tool: Tool;
@@ -67,6 +69,7 @@ const iconMapper: Record<Tool, ComponentType<SvgIconProps>> = {
   Firebase: SiFirebase,
   Next: RiNextjsFill,
   C: SiC,
+  Go: FaGolang,
 };
 
 const getIcon = (tool: Tool): ComponentType<SvgIconProps> => {

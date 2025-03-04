@@ -18,4 +18,5 @@ export const rampingUp: Tool[] = [
   "Flutter",
   "Nodejs",
   "RubyOnRails",
+  "Go"
 ]
