@@ -1,38 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Meu Portfólio - Frontend Estático (SPA) com Next.js e TypeScript
 
-## Getting Started
+Este é o meu portfólio pessoal desenvolvido utilizando Next.js e TypeScript. Ele é uma aplicação de página única (SPA) e contém informações sobre mim, minhas experiências profissionais e os projetos que desenvolvi, com links para os repositórios no GitHub ou Demo.
 
-First, run the development server:
+## Tecnologias Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js**: Framework React para construção de SPAs e sites estáticos.
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática.
+- **Material-UI**: Biblioteca de componentes da aplicação.
+- **Vercel**: Para deploy e hospedagem da aplicação.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Funcionalidades
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Página Inicial**: Apresentação pessoal com uma breve descrição sobre mim.
+- **Experiências Profissionais**: Uma seção detalhada com informações sobre as empresas e funções que desempenhei ao longo da minha carreira.
+- **Ferramentas**: Stacks e Frameworks que utilizo.
+- **Projetos**: Exibição dos meus projetos públicos no GitHub, com links para os respectivos repositórios.
+- **Design Responsivo**: A aplicação é otimizada para dispositivos móveis e desktop.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Como Rodar o Projeto Localmente
 
-## Learn More
+### Requisitos
 
-To learn more about Next.js, take a look at the following resources:
+- **Node.js** (versão 20 ou superior)
+- **npm**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Passos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone este repositório para sua máquina:
 
-## Deploy on Vercel
+   ```bash
+   git clone git@github.com:daneluzzitiago/port-ago.git
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Acesse o diretório do projeto:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# port-ago
-# port-ago
+   ```bash
+   cd port-ago
+
+3. Instale as dependências:
+
+    ```bash
+    npm install
+
+4. Rode o servidor de desenvolvimento:
+
+    ```bash
+    npm run dev
+    
+5. Abra o navegador e acesse o projeto no endereço http://localhost:3000.
+
+
+### Contato
+
+Email: daneluzzitiago@gmail.com
+
+[LinkedIn](https://www.linkedin.com/in/tiagodaneluzzi/)
+
+[GitHub](https://github.com/daneluzzitiago)
