@@ -37,7 +37,7 @@ export const projects: Project[] = [
   {
     title: "Go, players!",
     description:
-      "My first project using Golang. I don't know what it does yet, but it's related to e-sports!",
+      "My first Golang project: a local application using SQLite to store players and tournaments information. It manages tournaments where players compete until there's a winner.",
     githubUrl: "https://github.com/daneluzzitiago/go-players",
     tools: ["Go"],
   },
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     description:
       "Genetic Algorithm application that learns to play Blackjack and develops a decision matrix based on player cards. Developed during my Evolutionary Algorithms course.",
     githubUrl: "https://github.com/daneluzzitiago/21_evolutivo",
-    tools: ["C"]
+    tools: ["C"],
   },
   {
     title: "CSGO - Game State Listener",
@@ -59,12 +59,13 @@ export const projects: Project[] = [
     title: "Herois de mesa",
     description: "Board game developed as part of my university coursework.",
     githubUrl: "https://github.com/daneluzzitiago/herois_de_mesa",
-    tools: ["Java"]
+    tools: ["Java"],
   },
   {
     title: "Tetris",
-    description: "Tetris game implementation created during my undergraduate studies.",
+    description:
+      "Tetris game implementation created during my undergraduate studies.",
     githubUrl: "https://github.com/daneluzzitiago/tetris",
-    tools: ["Java"]
+    tools: ["Java"],
   },
 ];
