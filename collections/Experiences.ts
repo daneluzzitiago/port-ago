@@ -9,16 +9,16 @@ export const Experiences: CollectionConfig = {
   },
   fields: [
     { name: 'companyName', type: 'text', required: true },
-    { name: 'companyDescription', type: 'text', required: true },
-    { name: 'position', type: 'text', required: true },
-    { name: 'description', type: 'textarea' },
+    { name: 'companyDescription', type: 'text', required: true, localized: true },
+    { name: 'position', type: 'text', required: true, localized: true },
+    { name: 'description', type: 'textarea', localized: true },
     {
       name: 'tools',
       type: 'select',
       hasMany: true,
       options: [...toolOptions],
     },
-    { name: 'duration', type: 'text' },
+    { name: 'duration', type: 'text', localized: true },
     { name: 'iconPath', type: 'text' },
     {
       name: 'order',
