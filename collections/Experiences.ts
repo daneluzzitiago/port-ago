@@ -3,6 +3,12 @@ import { toolOptions } from './shared/toolOptions'
 
 export const Experiences: CollectionConfig = {
   slug: 'experiences',
+  access: {
+    read: () => true,
+    create: ({ req }) => !!req.user,
+    update: ({ req }) => !!req.user,
+    delete: ({ req }) => !!req.user,
+  },
   admin: {
     useAsTitle: 'companyName',
     defaultColumns: ['companyName', 'position', 'duration', 'order'],

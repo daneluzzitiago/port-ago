@@ -2,14 +2,20 @@ import type { CollectionConfig } from 'payload'
 
 export const Degrees: CollectionConfig = {
   slug: 'degrees',
+  access: {
+    read: () => true,
+    create: ({ req }) => !!req.user,
+    update: ({ req }) => !!req.user,
+    delete: ({ req }) => !!req.user,
+  },
   admin: {
     useAsTitle: 'course',
     defaultColumns: ['course', 'institution', 'order'],
   },
   fields: [
     { name: 'institution', type: 'text', required: true },
-    { name: 'course', type: 'text', required: true },
-    { name: 'description', type: 'textarea', required: true },
+    { name: 'course', type: 'text', required: true, localized: true },
+    { name: 'description', type: 'textarea', required: true, localized: true },
     {
       name: 'order',
       type: 'number',
