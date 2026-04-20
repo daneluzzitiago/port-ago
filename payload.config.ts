@@ -16,11 +16,17 @@ import { HeroGlobal } from './globals/Hero'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-if (!process.env.PAYLOAD_SECRET) {
-  throw new Error('PAYLOAD_SECRET environment variable is required')
-}
-if (!process.env.DATABASE_URI) {
-  throw new Error('DATABASE_URI environment variable is required')
+// Skip validation during `next build` — env vars are only needed at runtime.
+// At runtime (dev server or Vercel deployment), the check still runs.
+const isBuildPhase = process.env.NEXT_PHASE === 'phase-production-build'
+
+if (!isBuildPhase) {
+  if (!process.env.PAYLOAD_SECRET) {
+    throw new Error('PAYLOAD_SECRET environment variable is required')
+  }
+  if (!process.env.DATABASE_URI) {
+    throw new Error('DATABASE_URI environment variable is required')
+  }
 }
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
@@ -43,13 +49,13 @@ export default buildConfig({
   collections: [Users, Media, Degrees, Experiences, ProjectsCollection],
   globals: [HeroGlobal],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET,
+  secret: process.env.PAYLOAD_SECRET ?? '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   db: sqliteAdapter({
     client: {
-      url: process.env.DATABASE_URI,
+      url: process.env.DATABASE_URI ?? '',
       authToken: process.env.DATABASE_AUTH_TOKEN,
     },
   }),
