@@ -4,10 +4,13 @@ import type { Experience } from '@/payload-types'
 import { SectionWrapper } from '../ui/SectionWrapper'
 import { ExperienceCard } from '../ui/ExperienceCard'
 
-export async function ExperiencesSection() {
+type Props = { locale: string; title: string }
+
+export async function ExperiencesSection({ locale, title }: Props) {
   const payload = await getPayload({ config })
   const { docs } = await payload.find({
     collection: 'experiences',
+    locale: locale as 'pt' | 'en',
     sort: 'order',
     limit: 100,
     pagination: false,
@@ -16,8 +19,8 @@ export async function ExperiencesSection() {
   const experiences = [...(docs as Experience[])].reverse()
 
   return (
-    <SectionWrapper id="experiences" title="Experiências">
-      <div className="flex flex-col gap-4">
+    <SectionWrapper id="experiences" title={title}>
+      <div className="flex w-full flex-col gap-4">
         {experiences.map((experience) => (
           <ExperienceCard key={experience.id} experience={experience} />
         ))}

@@ -96,7 +96,7 @@ export interface Config {
   globalsSelect: {
     hero: HeroSelect<false> | HeroSelect<true>;
   };
-  locale: null;
+  locale: 'pt' | 'en';
   user: User & {
     collection: 'users';
   };
@@ -204,6 +204,8 @@ export interface Experience {
         | 'Postgres'
         | 'Firebase'
         | 'C'
+        | 'C#'
+        | '.NET'
         | 'Go'
       )[]
     | null;
@@ -245,6 +247,8 @@ export interface Project {
         | 'Postgres'
         | 'Firebase'
         | 'C'
+        | 'C#'
+        | '.NET'
         | 'Go'
       )[]
     | null;

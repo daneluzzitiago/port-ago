@@ -1,4 +1,6 @@
 import type { Degree } from '@/payload-types'
+import { Heading } from './Heading'
+import { Text } from './Text'
 
 type DegreeCardProps = {
   degree: Degree
@@ -6,10 +8,10 @@ type DegreeCardProps = {
 
 export function DegreeCard({ degree }: DegreeCardProps) {
   return (
-    <div className="flex-1 flex flex-col gap-2 p-6 rounded-xl border border-white/10 bg-white/5">
-      <p className="text-xs font-bold text-accent uppercase tracking-widest">{degree.institution}</p>
-      <h3 className="text-lg font-semibold text-white">{degree.course}</h3>
-      <p className="text-sm text-gray leading-relaxed">{degree.description}</p>
+    <div className="flex-1 flex flex-col gap-2 py-2">
+      <Text variant="caption" as="span">{degree.institution}</Text>
+      <Heading level={3} size="2xl">{degree.course}</Heading>
+      <Text size="sm" variant="muted" className="md:max-w-[80%]">{degree.description}</Text>
     </div>
   )
 }

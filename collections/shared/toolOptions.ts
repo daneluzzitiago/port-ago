@@ -16,5 +16,7 @@ export const toolOptions = [
   { label: 'PostgreSQL', value: 'Postgres' },
   { label: 'Firebase', value: 'Firebase' },
   { label: 'C', value: 'C' },
+  { label: 'C#', value: 'C#' },
+  { label: '.NET', value: '.NET' },
   { label: 'Go', value: 'Go' },
 ] as const

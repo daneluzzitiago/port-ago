@@ -232,6 +232,54 @@ const EXPERIENCES = [
       duration: '4 months (2024-2025)',
     },
   },
+  {
+    shared: {
+      companyName: 'Livance',
+      tools: ['React', 'TypeScript', 'Next', 'C#', '.NET'] as Tool[],
+      iconPath: 'livance.svg',
+      order: 8,
+    },
+    pt: {
+      companyDescription: 'Health Tech',
+      position: 'Engenheiro de Software',
+      description:
+        'Implementei chatbot Zendesk no aplicativo da empresa, reduzindo custos operacionais de suporte ao cliente. ' +
+        'Automatizei registro e transferência de domínios através de EPP, diminuindo a sobrecarga operacional de DevOps. ' +
+        'Configurei a biblioteca Typesense para busca de médicos, possibilitando consultas em texto livre em toda a base de dados, ' +
+        'reduzindo o tempo de busca em cerca de 95% e melhorando a precisão.',
+      duration: '8 meses (2025)',
+    },
+    en: {
+      companyDescription: 'Health Tech',
+      position: 'Software Engineer',
+      description:
+        'Implemented Zendesk chatbot in the company\'s application, reducing customer support operational costs. ' +
+        'Automated domain registration and transfer through EPP, decreasing DevOps operational overhead. ' +
+        'Configured the Typesense library for doctor search, enabling full-text queries across the entire database, ' +
+        'reducing search time by approximately 95% and improving accuracy.',
+      duration: '8 months (2025)',
+    },
+  },
+  {
+    shared: {
+      companyName: 'TotalPass',
+      tools: ['RubyOnRails'] as Tool[],
+      iconPath: 'totalpass.svg',
+      order: 9,
+    },
+    pt: {
+      companyDescription: 'Bem-estar Corporativo',
+      position: 'Engenheiro de Software',
+      description: '',
+      duration: 'Atual (2025)',
+    },
+    en: {
+      companyDescription: 'Corporate Wellness',
+      position: 'Software Engineer',
+      description: '',
+      duration: 'Current (2025)',
+    },
+  },
 ]
 
 const PROJECTS = [

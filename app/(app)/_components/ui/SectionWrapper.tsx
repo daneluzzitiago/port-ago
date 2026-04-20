@@ -1,22 +1,35 @@
+import { Container } from './Container'
+import { Heading } from './Heading'
+
 type SectionWrapperProps = {
   id: string
   title?: string
-  alternate?: boolean
+  fullWidthContent?: boolean
   children: React.ReactNode
 }
 
-export function SectionWrapper({ id, title, alternate = false, children }: SectionWrapperProps) {
+export function SectionWrapper({
+  id,
+  title,
+  fullWidthContent = false,
+  children,
+}: SectionWrapperProps) {
   return (
     <section
       id={id}
-      className={`min-h-screen px-4 sm:px-8 md:px-16 lg:px-32 py-24 ${alternate ? 'bg-bg-light' : 'bg-bg'}`}
+      className="scroll-mt-14 pb-16 bg-bg"
     >
+      <Container className="pt-8">
+        <hr className="section-divider" />
+      </Container>
       {title && (
-        <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-12">
-          {title}
-        </h2>
+        <Container className="py-8">
+          <Heading level={2} size="4xl">
+            {title}
+          </Heading>
+        </Container>
       )}
-      {children}
+      {fullWidthContent ? children : <Container>{children}</Container>}
     </section>
   )
 }
