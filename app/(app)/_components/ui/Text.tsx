@@ -8,7 +8,7 @@ const text = cva("leading-relaxed text-justify", {
       body: "text-text",
       muted: "text-text-muted",
       strong: "text-text-strong",
-      caption: "text-text-muted text-xs uppercase tracking-widest font-bold",
+      caption: "text-primary text-xs uppercase tracking-widest font-bold",
     },
     size: {
       xs: "text-xs",

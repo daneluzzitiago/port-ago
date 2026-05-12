@@ -8,12 +8,12 @@ const link = cva(
     variants: {
       variant: {
         default:
-          "text-primary-light hover:text-primary-lighter underline underline-offset-2",
-        nav: "text-text-muted hover:text-text-strong no-underline text-[0.65rem] sm:text-xs font-bold uppercase tracking-tight sm:tracking-widest",
+          "text-secondary hover:text-primary underline underline-offset-2",
+        nav: "text-text-muted hover:text-secondary no-underline text-[0.65rem] sm:text-xs font-bold uppercase tracking-tight sm:tracking-widest",
         "nav-active":
-          "text-primary-light no-underline text-[0.65rem] sm:text-xs font-bold uppercase tracking-tight sm:tracking-widest",
+          "text-primary no-underline text-[0.65rem] sm:text-xs font-bold uppercase tracking-tight sm:tracking-widest",
         accent:
-          "text-accent hover:opacity-80 no-underline text-xs font-bold uppercase tracking-widest",
+          "text-primary hover:text-primary-hover no-underline text-xs font-bold uppercase tracking-widest",
       },
     },
     defaultVariants: { variant: "default" },

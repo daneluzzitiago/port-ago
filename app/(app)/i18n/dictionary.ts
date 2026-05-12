@@ -1,6 +1,6 @@
 import type { Locale } from './config'
 
-export const dictionary = {
+const dictionary = {
   pt: {
     nav: {
       home: 'Home',

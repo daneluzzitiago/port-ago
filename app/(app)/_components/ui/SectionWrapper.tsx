@@ -17,14 +17,14 @@ export function SectionWrapper({
   return (
     <section
       id={id}
-      className="scroll-mt-14 pb-16 bg-bg"
+      className="scroll-mt-14 pb-16 bg-transparent"
     >
       <Container className="pt-8">
         <hr className="section-divider" />
       </Container>
       {title && (
         <Container className="py-8">
-          <Heading level={2} size="4xl">
+          <Heading level={2} size="4xl" className="bg-gradient-to-r from-white via-primary-lightest to-secondary bg-clip-text text-transparent">
             {title}
           </Heading>
         </Container>

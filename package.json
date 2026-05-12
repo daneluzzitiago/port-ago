@@ -14,11 +14,6 @@
     "generate:types": "payload generate:types"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@fontsource/inter": "^5.1.1",
-    "@mui/icons-material": "^7.0.2",
-    "@mui/material": "^7.0.2",
     "@payloadcms/db-sqlite": "^3.83.0",
     "@payloadcms/next": "^3.83.0",
     "@payloadcms/payload-cloud": "^3.83.0",
@@ -31,7 +26,6 @@
     "payload": "^3.83.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-icons": "^5.4.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.2.2"
   },
@@ -41,7 +35,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
-    "lint-staged": "^15.4.3",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }

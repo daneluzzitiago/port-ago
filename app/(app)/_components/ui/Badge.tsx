@@ -3,18 +3,18 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { clsx } from "clsx";
 
 const badge = cva(
-  "inline-flex items-center font-medium select-none whitespace-nowrap",
+  "inline-flex items-center font-mono font-medium tracking-wide select-none whitespace-nowrap",
   {
     variants: {
       variant: {
         primary:
-          "text-primary-light bg-primary-light/10 border border-primary-light/30",
+          "text-primary bg-primary/10 border border-primary/35 shadow-[0_0_18px_rgba(247,201,72,0.1)]",
         secondary:
-          "text-secondary-light bg-secondary-light/10 border border-secondary-light/30",
+          "text-secondary bg-secondary/10 border border-secondary/40",
         accent:
-          "text-accent bg-accent/10 border border-accent/30",
+          "text-accent bg-accent/10 border border-accent/45",
         outline:
-          "text-text-strong bg-transparent border border-border-hover",
+          "text-text-strong bg-surface/70 border border-border-hover",
       },
       size: {
         sm: "text-xs px-2 py-0.5 rounded-[var(--radius-sm)]",

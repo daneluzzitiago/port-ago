@@ -10,7 +10,7 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="h-full flex flex-col gap-2 py-2">
+    <div className="glass-panel h-full flex flex-col gap-2 rounded-[var(--radius-xl)] border border-border p-6 transition-all duration-[var(--duration-normal)] hover:border-primary/60 hover:shadow-lg">
       <div className="flex items-start justify-between gap-2">
         <Heading level={3} size="2xl">{project.title}</Heading>
         {project.isWorkInProgress && (
@@ -36,7 +36,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               variant="nav"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary-light hover:text-primary-lighter"
+              className="text-secondary hover:text-secondary-light"
             >
               GitHub →
             </Link>

@@ -20,13 +20,13 @@ export async function HeroSection({ locale, dict }: Props) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen bg-bg py-16 flex items-center overflow-hidden"
+      className="aurora-section relative min-h-screen py-16 flex items-center"
     >
       {/* Ambient glow */}
       <div
         className="absolute top-[-20%] right-[-5%] w-[520px] h-[520px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(124,58,237,0.16) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(56,213,255,0.2) 0%, transparent 70%)',
           filter: 'blur(48px)',
         }}
         aria-hidden="true"
@@ -36,19 +36,19 @@ export async function HeroSection({ locale, dict }: Props) {
         <div className="flex flex-col gap-8">
           <Heading level={1} size="6xl" className="font-normal">
             {dict.hero.greeting}
-            <span className="font-bold text-primary-lightest">{hero.name}</span>
+            <span className="font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">{hero.name}</span>
             {dict.hero.butCall}
-            <span className="font-bold text-primary-lightest">{hero.nickname}</span>
+            <span className="font-bold bg-gradient-to-r from-secondary via-secondary-lighter to-primary bg-clip-text text-transparent">{hero.nickname}</span>
           </Heading>
 
           <Text size="xl" variant="strong">
-            <span className="font-bold text-accent">{hero.role}</span>
+            <span className="font-bold text-primary drop-shadow-[0_0_18px_rgba(247,201,72,0.22)]">{hero.role}</span>
           </Text>
 
           <div className="flex items-center gap-4 self-start">
             <a
               href="#degrees"
-              className="inline-flex items-center justify-center gap-2 font-semibold transition-colors rounded-full uppercase tracking-widest h-12 px-7 text-base bg-transparent text-primary-light border border-primary-light/30 hover:bg-primary-light/10 hover:text-primary-lighter"
+              className="inline-flex items-center justify-center gap-2 font-semibold transition-all rounded-full uppercase tracking-widest h-12 px-7 text-base bg-gradient-to-r from-primary via-primary-hover to-accent text-bg shadow-[0_10px_28px_rgba(247,201,72,0.22)] hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(247,201,72,0.32)]"
             >
               {hero.ctaLabel}
             </a>
@@ -61,7 +61,7 @@ export async function HeroSection({ locale, dict }: Props) {
           <div
             className="absolute w-[320px] h-[320px] rounded-full pointer-events-none"
             style={{
-              background: 'radial-gradient(circle, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.08) 40%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(247,201,72,0.24) 0%, rgba(56,213,255,0.1) 42%, transparent 70%)',
               filter: 'blur(32px)',
             }}
             aria-hidden="true"

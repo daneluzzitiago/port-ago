@@ -2,7 +2,7 @@ import { type HTMLAttributes, type ElementType } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { clsx } from "clsx";
 
-const heading = cva("font-bold tracking-tight", {
+const heading = cva("font-heading font-bold tracking-tight", {
   variants: {
     size: {
       "6xl": "text-5xl md:text-6xl leading-[1.1]",
@@ -11,12 +11,12 @@ const heading = cva("font-bold tracking-tight", {
       "3xl": "text-2xl md:text-3xl leading-[1.2]",
       "2xl": "text-xl md:text-2xl leading-[1.25]",
       xl: "text-lg md:text-xl leading-[1.3]",
-    },
-    tone: {
-      white: "text-white",
-      strong: "text-text-strong",
-      primary: "text-primary-lightest",
-    },
+      },
+      tone: {
+        white: "text-white",
+        strong: "text-text-strong",
+        primary: "text-primary",
+      },
   },
   defaultVariants: { size: "4xl", tone: "white" },
 });

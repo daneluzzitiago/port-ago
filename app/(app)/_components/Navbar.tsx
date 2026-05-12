@@ -62,13 +62,14 @@ export function Navbar({ locale, dict }: NavbarProps) {
       className={clsx(
         'fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300',
         hasPassedScrollThreshold
-          ? 'bg-transparent border-transparent backdrop-blur-0'
-          : 'bg-surface/90 border-border backdrop-blur-sm',
+          ? 'bg-bg/70 border-border backdrop-blur-xl'
+          : 'bg-bg/90 border-border backdrop-blur-xl',
       )}
     >
       <Container className="flex items-center justify-between h-14">
-        <span className="text-[0.6rem] sm:text-sm font-bold text-primary-lightest tracking-normal sm:tracking-widest uppercase select-none whitespace-nowrap">
-          Port Ago <span className="animate-blink text-xs sm:text-base">{'>'}</span>
+        <span className="font-heading text-[0.6rem] sm:text-sm font-bold tracking-normal sm:tracking-widest uppercase select-none whitespace-nowrap">
+          <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Port Ago</span>{' '}
+          <span className="animate-blink text-xs sm:text-base text-primary">{'>'}</span>
         </span>
         <ul className="flex items-center gap-1 sm:gap-6">
           {navSections.map(({ id, label }) => (
