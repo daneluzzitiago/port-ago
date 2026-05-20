@@ -15,6 +15,7 @@ export function LanguageSwitcher({ current }: Props) {
 
   return (
     <button
+      type="button"
       onClick={() => startTransition(() => setLanguage(next))}
       disabled={isPending}
       aria-label={`Switch to ${next === 'pt' ? 'Português' : 'English'}`}

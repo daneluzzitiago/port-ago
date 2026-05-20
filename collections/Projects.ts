@@ -38,7 +38,6 @@ export const ProjectsCollection: CollectionConfig = {
       options: [...toolOptions],
     },
     { name: 'isWorkInProgress', type: 'checkbox', defaultValue: false },
-    { name: 'imgPath', type: 'text' },
     {
       name: 'order',
       type: 'number',

@@ -15,6 +15,5 @@ export const HeroGlobal: GlobalConfig = {
     { name: 'role', type: 'text', required: true, localized: true },
     { name: 'subtitle', type: 'textarea', required: true, localized: true },
     { name: 'ctaLabel', type: 'text', required: true, localized: true },
-    { name: 'ctaTarget', type: 'text', required: true },
   ],
 }

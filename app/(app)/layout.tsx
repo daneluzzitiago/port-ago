@@ -1,9 +1,14 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk } from 'next/font/google'
+import { Archivo, Fraunces, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
+const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-fraunces' })
+const archivo = Archivo({ subsets: ['latin'], variable: '--font-archivo' })
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-ibm-plex-mono',
+})
 
 export const metadata: Metadata = {
   title: 'Tiago Daneluzz — Software Developer',
@@ -12,8 +17,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="bg-bg text-text font-sans antialiased">
+    <html
+      lang="pt-BR"
+      className={`${fraunces.variable} ${archivo.variable} ${ibmPlexMono.variable}`}
+    >
+      <body className="antialiased">
         {children}
       </body>
     </html>

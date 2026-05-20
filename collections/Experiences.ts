@@ -25,7 +25,6 @@ export const Experiences: CollectionConfig = {
       options: [...toolOptions],
     },
     { name: 'duration', type: 'text', localized: true },
-    { name: 'iconPath', type: 'text' },
     {
       name: 'order',
       type: 'number',

@@ -14,7 +14,7 @@ type Tool = NonNullable<Experience['tools']>[number]
 // ─── Bilingual data ──────────────────────────────────────────────────────────
 
 const HERO = {
-  shared: { name: 'Tiago L. Daneluzzi', nickname: 'Dan', ctaTarget: 'about' },
+  shared: { name: 'Tiago L. Daneluzzi', nickname: 'Dan' },
   pt: {
     role: 'Desenvolvedor Full Stack',
     subtitle: 'Bem-vindo ao meu site! Aqui você encontra um pouco sobre mim e minhas experiências',
@@ -72,7 +72,7 @@ const DEGREES = [
 
 const EXPERIENCES = [
   {
-    shared: { companyName: 'Dog Hero', tools: ['RubyOnRails', 'HTML', 'CSS'] as Tool[], iconPath: 'dog-hero.svg', order: 1 },
+    shared: { companyName: 'Dog Hero', tools: ['RubyOnRails', 'HTML', 'CSS'] as Tool[], order: 1 },
     pt: {
       companyDescription: 'Serviços de hospedagem e passeio para pets',
       position: 'Estagiário de Desenvolvimento de Software (Verão)',
@@ -93,7 +93,7 @@ const EXPERIENCES = [
     },
   },
   {
-    shared: { companyName: 'Responde Aí', tools: [] as Tool[], iconPath: 'responde-ai.svg', order: 2 },
+    shared: { companyName: 'Responde Aí', tools: [] as Tool[], order: 2 },
     pt: {
       companyDescription: 'Plataforma de ensino',
       position: 'Embaixador da Marca na USP',
@@ -110,7 +110,7 @@ const EXPERIENCES = [
     },
   },
   {
-    shared: { companyName: 'Stoq', tools: ['Python', 'JavaScript', 'React', 'Postgres', 'Redux'] as Tool[], iconPath: 'stoq.svg', order: 3 },
+    shared: { companyName: 'Stoq', tools: ['Python', 'JavaScript', 'React', 'Postgres', 'Redux'] as Tool[], order: 3 },
     pt: {
       companyDescription: 'Soluções para varejo',
       position: 'Estagiário de Desenvolvimento de Software',
@@ -127,7 +127,7 @@ const EXPERIENCES = [
     },
   },
   {
-    shared: { companyName: 'B2W', tools: ['Python'] as Tool[], iconPath: 'b2w.svg', order: 4 },
+    shared: { companyName: 'B2W', tools: ['Python'] as Tool[], order: 4 },
     pt: {
       companyDescription: 'Marketplace',
       position: 'Estagiário de Gestão de Produtos',
@@ -152,7 +152,6 @@ const EXPERIENCES = [
     shared: {
       companyName: 'Monitora',
       tools: ['Java', 'SpringBoot', 'Postgres', 'MySQL', 'React', 'JavaScript', 'Redux'] as Tool[],
-      iconPath: 'monitora.svg',
       order: 5,
     },
     pt: {
@@ -180,7 +179,6 @@ const EXPERIENCES = [
     shared: {
       companyName: 'Quinto Andar',
       tools: ['Java', 'SpringBoot', 'Postgres', 'MySQL', 'React', 'JavaScript', 'Redux', 'TypeScript', 'Flutter', 'Firebase', 'Next'] as Tool[],
-      iconPath: 'quinto-andar.svg',
       order: 6,
     },
     pt: {
@@ -210,7 +208,6 @@ const EXPERIENCES = [
     shared: {
       companyName: 'Rei do Pitaco',
       tools: ['React', 'JavaScript', 'TypeScript', 'Flutter', 'Next'] as Tool[],
-      iconPath: 'rei-do-pitaco.svg',
       order: 7,
     },
     pt: {
@@ -236,7 +233,6 @@ const EXPERIENCES = [
     shared: {
       companyName: 'Livance',
       tools: ['React', 'TypeScript', 'Next', 'C#', '.NET'] as Tool[],
-      iconPath: 'livance.svg',
       order: 8,
     },
     pt: {
@@ -264,7 +260,6 @@ const EXPERIENCES = [
     shared: {
       companyName: 'TotalPass',
       tools: ['RubyOnRails'] as Tool[],
-      iconPath: 'totalpass.svg',
       order: 9,
     },
     pt: {
@@ -284,12 +279,12 @@ const EXPERIENCES = [
 
 const PROJECTS = [
   {
-    shared: { title: 'Gymbo', projectUrl: 'https://gymbo.com.br', tools: ['Firebase', 'React', 'TypeScript', 'Next'] as Tool[], imgPath: '/gymbo.png', order: 1 },
+    shared: { title: 'Gymbo', projectUrl: 'https://gymbo.com.br', tools: ['Firebase', 'React', 'TypeScript', 'Next'] as Tool[], order: 1 },
     pt: { description: 'Plataforma para criação e acompanhamento de desempenho de treinos de musculação.' },
     en: { description: 'Platform for creating and tracking workout performance in weight training.' },
   },
   {
-    shared: { title: 'Google Login', githubUrl: 'https://github.com/daneluzzitiago/google-login', tools: ['JavaScript', 'Firebase'] as Tool[], imgPath: '/google-login.png', order: 2 },
+    shared: { title: 'Google Login', githubUrl: 'https://github.com/daneluzzitiago/google-login', tools: ['JavaScript', 'Firebase'] as Tool[], order: 2 },
     pt: { description: 'Tutorial simples demonstrando a implementação de autenticação Google em aplicações web.' },
     en: { description: 'Simple tutorial demonstrating Google authentication implementation in web applications.' },
   },

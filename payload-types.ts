@@ -222,7 +222,6 @@ export interface Experience {
       )[]
     | null;
   duration?: string | null;
-  iconPath?: string | null;
   /**
    * Menor número aparece primeiro
    */
@@ -265,7 +264,6 @@ export interface Project {
       )[]
     | null;
   isWorkInProgress?: boolean | null;
-  imgPath?: string | null;
   /**
    * Menor número aparece primeiro
    */
@@ -422,7 +420,6 @@ export interface ExperiencesSelect<T extends boolean = true> {
   description?: T;
   tools?: T;
   duration?: T;
-  iconPath?: T;
   order?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -438,7 +435,6 @@ export interface ProjectsSelect<T extends boolean = true> {
   projectUrl?: T;
   tools?: T;
   isWorkInProgress?: T;
-  imgPath?: T;
   order?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -494,7 +490,6 @@ export interface Hero {
   role: string;
   subtitle: string;
   ctaLabel: string;
-  ctaTarget: string;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -508,7 +503,6 @@ export interface HeroSelect<T extends boolean = true> {
   role?: T;
   subtitle?: T;
   ctaLabel?: T;
-  ctaTarget?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
