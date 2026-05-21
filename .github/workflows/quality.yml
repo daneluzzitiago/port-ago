@@ -1,0 +1,65 @@
+name: Quality
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+
+concurrency:
+  group: quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Lint, types, duplication, dead code and build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Setup reviewdog
+        if: github.event_name == 'pull_request'
+        uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest
+
+      - name: Generate ESLint report
+        if: github.event_name == 'pull_request'
+        run: npm run lint -- --format json --output-file eslint-report.json || true
+
+      - name: Comment ESLint findings on PR
+        if: github.event_name == 'pull_request'
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: reviewdog -f=eslint -name=eslint -reporter=github-pr-review -fail-level=warning < eslint-report.json
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type check
+        run: npm run type-check
+
+      - name: Detect unused files, exports and dependencies
+        run: npm run knip
+
+      - name: Detect duplicated code
+        run: npm run duplicates
+
+      - name: Build
+        run: npm run build

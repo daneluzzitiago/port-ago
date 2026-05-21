@@ -1,6 +1,16 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "next/typescript"
-  ]
+    "next/typescript",
+    "plugin:sonarjs/recommended-legacy"
+  ],
+  "plugins": [
+    "sonarjs"
+  ],
+  "rules": {
+    "sonarjs/cognitive-complexity": [
+      "warn",
+      15
+    ]
+  }
 }

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "entry": [
+    "next.config.ts",
+    "payload.config.ts",
+    "seed.ts",
+    "app/(app)/page.tsx",
+    "app/(payload)/layout.tsx",
+    "app/(payload)/admin/[[...segments]]/page.tsx",
+    "app/(payload)/admin/[[...segments]]/not-found.tsx",
+    "app/(payload)/api/[...slug]/route.ts",
+    "app/(payload)/api/graphql/route.ts",
+    "app/(payload)/api/graphql-playground/route.ts"
+  ],
+  "project": [
+    "**/*.{ts,tsx}",
+    "!payload-types.ts",
+    "!next-env.d.ts"
+  ],
+  "ignore": [
+    ".next/**",
+    "node_modules/**",
+    "agent/**",
+    "payload-types.ts",
+    "next-env.d.ts"
+  ],
+  "ignoreDependencies": [
+    "tailwindcss"
+  ]
+}
