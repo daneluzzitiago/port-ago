@@ -1,0 +1,18 @@
+{
+  "threshold": 5,
+  "minLines": 8,
+  "minTokens": 80,
+  "reporters": ["console"],
+  "ignore": [
+    "**/node_modules/**",
+    "**/.next/**",
+    "**/.git/**",
+    "**/.husky/_/**",
+    "**/coverage/**",
+    "**/report/**",
+    "**/payload-types.ts",
+    "**/package-lock.json",
+    "**/agent/**",
+    "**/public/**"
+  ]
+}
