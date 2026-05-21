@@ -19,6 +19,10 @@ const dictionary = {
       butCall: ', mas pode me chamar de ',
       iam: 'Sou ',
     },
+    projects: {
+      latestCommit: 'Último commit',
+      commitUnavailable: 'Commit indisponível',
+    },
   },
   en: {
     nav: {
@@ -37,6 +41,10 @@ const dictionary = {
       greeting: "Hello, I'm ",
       butCall: ', but you can call me ',
       iam: "I'm a ",
+    },
+    projects: {
+      latestCommit: 'Latest commit',
+      commitUnavailable: 'Commit unavailable',
     },
   },
 } as const satisfies Record<Locale, unknown>

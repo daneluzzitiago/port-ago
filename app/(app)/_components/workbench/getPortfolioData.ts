@@ -3,6 +3,11 @@ import config from '@payload-config'
 import type { Degree, Experience, Hero, Project } from '@/payload-types'
 import type { Locale } from '../../i18n/config'
 import { getDict } from '../../i18n/dictionary'
+import { getLatestGithubCommit, type GithubLatestCommit } from './githubCommits'
+
+type PortfolioProject = Project & {
+  latestCommit?: GithubLatestCommit
+}
 
 export type PortfolioData = {
   locale: Locale
@@ -10,7 +15,7 @@ export type PortfolioData = {
   hero: Hero
   degrees: Degree[]
   experiences: Experience[]
-  projects: Project[]
+  projects: PortfolioProject[]
 }
 
 export async function getPortfolioData(locale: Locale): Promise<PortfolioData> {
@@ -46,6 +51,25 @@ export async function getPortfolioData(locale: Locale): Promise<PortfolioData> {
     hero: hero as Hero,
     degrees: degreesResult.docs as Degree[],
     experiences: [...(experiencesResult.docs as Experience[])].reverse(),
-    projects: projectsResult.docs as Project[],
+    projects: await withGithubLatestCommits(projectsResult.docs as Project[]),
   }
+}
+
+async function withGithubLatestCommits(projects: Project[]): Promise<PortfolioProject[]> {
+  return Promise.all(
+    projects.map(async (project) => {
+      if (!canShowLatestCommit(project)) {
+        return project
+      }
+
+      return {
+        ...project,
+        latestCommit: await getLatestGithubCommit(project.githubUrl),
+      }
+    }),
+  )
+}
+
+function canShowLatestCommit(project: Project): project is Project & { githubUrl: string } {
+  return Boolean(project.githubUrl && !project.projectUrl)
 }
