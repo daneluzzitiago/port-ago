@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Archivo, Fraunces, IBM_Plex_Mono } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-fraunces' })
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="antialiased">
         {children}
+        <Analytics />
       </body>
     </html>
   )
