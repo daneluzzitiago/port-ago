@@ -22,6 +22,7 @@ Vazio.
 6. Adicionada validação de resolução de dependências ao workflow `Quality`.
 7. Reordenado `npm run quality` para executar Knip antes do type-check e manter o comando estável localmente.
 8. Validada a correção com `npm install --package-lock-only --ignore-scripts --dry-run` e `npm run quality:ci`.
+9. Registrada regra para monitorar operações longas e reportar travamentos em vez de deixar o agente carregando sem feedback.
 
 ## Decisões Arquitetônicas
 
@@ -32,6 +33,7 @@ Vazio.
 5. Usar CodeQL para análise gratuita de segurança e qualidade em JavaScript/TypeScript.
 6. Usar Dependabot para abrir PRs semanais de atualização de npm e GitHub Actions.
 7. Validar no PR a resolução de dependências com `npm install --package-lock-only --ignore-scripts --dry-run`, porque a Vercel usa o caminho de `npm install`.
+8. Monitorar comandos longos, hooks, pushes, builds e agentes em background, comunicando travamentos ou lentidão anormal.
 
 ## Notas da Sessão
 
