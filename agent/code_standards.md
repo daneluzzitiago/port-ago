@@ -56,6 +56,7 @@
 
 1. Antes de concluir mudanças de código, rodar `npm run quality:ci`.
 2. Use `npm run lint`, `npm run type-check`, `npm run knip` e `npm run duplicates` para diagnósticos específicos.
-3. Não adicionar novas ferramentas de lint, build ou teste sem necessidade explícita.
-4. Não misturar refatoração ampla com entrega de feature.
-5. Não alterar arquivos não relacionados à tarefa atual.
+3. O workflow de PR deve validar a resolução de dependências com `npm install --package-lock-only --ignore-scripts --dry-run`, equivalente ao caminho de install usado pela Vercel.
+4. Não adicionar novas ferramentas de lint, build ou teste sem necessidade explícita.
+5. Não misturar refatoração ampla com entrega de feature.
+6. Não alterar arquivos não relacionados à tarefa atual.

@@ -24,6 +24,13 @@ Trabalhe em apenas um recurso ou subsistema por vez, sem alterar arquivos não r
 7. Validar com os comandos existentes adequados.
 8. Registrar decisões relevantes em `agent/progress_tracker.md`.
 
+## Monitoramento de operações
+
+1. Monitorar ativamente comandos longos, hooks, builds, testes, pushes, deploys e agentes em background.
+2. Se uma operação demorar mais que o esperado ou parecer travada, informar o status em vez de deixar a execução em carregamento silencioso.
+3. Ao investigar falhas intermitentes, registrar o que já passou, o que falhou e qual será a próxima tentativa.
+4. Não iniciar uma nova fase dependente sem confirmar que a operação anterior terminou com sucesso ou falhou de forma entendida.
+
 ## Proteção contra regressões
 
 1. Preserve comportamento existente salvo quando a tarefa pedir uma alteração explícita.
@@ -32,6 +39,7 @@ Trabalhe em apenas um recurso ou subsistema por vez, sem alterar arquivos não r
 4. Não hardcode dados que pertencem ao CMS.
 5. Não remova acessibilidade básica de botões, links, headings e imagens.
 6. Não ignore erros de build, type-check ou validação.
+7. Mudanças em dependências precisam passar por validação compatível com o install da Vercel no PR.
 
 ## Regras para UI
 
