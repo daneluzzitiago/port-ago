@@ -331,6 +331,56 @@ body:has(.site-workbench)::-webkit-scrollbar-thumb:hover {
   margin-top: 1.25rem;
 }
 
+.site-workbench__commit {
+  margin-top: 1rem;
+  border: 1px dashed rgba(37, 28, 20, 0.28);
+  padding: 0.75rem;
+  background: rgba(241, 200, 105, 0.18);
+  font-family: var(--font-ibm-plex-mono), monospace;
+}
+
+.site-workbench__commit > span {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a14f2a;
+}
+
+.site-workbench__commit a {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 0.45rem;
+  text-decoration: none;
+}
+
+.site-workbench__commit strong {
+  width: fit-content;
+  margin-top: 0;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+  background: #fff7e8;
+  font-size: 0.72rem;
+}
+
+.site-workbench__commit a > span {
+  font-family: var(--font-archivo), sans-serif;
+  line-height: 1.35;
+}
+
+.site-workbench__commit time {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.site-workbench__commit p {
+  margin-top: 0.45rem;
+  font-size: 0.75rem;
+  color: #a14f2a;
+}
+
 .site-workbench__status,
 .site-workbench__project-button {
   display: inline-flex;
