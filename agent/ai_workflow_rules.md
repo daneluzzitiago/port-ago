@@ -15,12 +15,14 @@ Trabalhe em apenas um recurso ou subsistema por vez, sem alterar arquivos não r
 
 ## Fluxo obrigatório para mudanças
 
-1. Identificar arquivos diretamente envolvidos.
-2. Ler os arquivos antes de editar.
-3. Fazer mudanças cirúrgicas e coesas.
-4. Atualizar documentação apenas quando a mudança alterar arquitetura, padrões ou fluxo.
-5. Validar com os comandos existentes adequados.
-6. Registrar decisões relevantes em `agent/progress_tracker.md`.
+1. Antes de editar código, partir de `main` atualizada com `git pull --ff-only`.
+2. Criar uma branch nova e específica para a tarefa.
+3. Identificar arquivos diretamente envolvidos.
+4. Ler os arquivos antes de editar.
+5. Fazer mudanças cirúrgicas e coesas.
+6. Atualizar documentação apenas quando a mudança alterar arquitetura, padrões ou fluxo.
+7. Validar com os comandos existentes adequados.
+8. Registrar decisões relevantes em `agent/progress_tracker.md`.
 
 ## Proteção contra regressões
 
@@ -30,6 +32,7 @@ Trabalhe em apenas um recurso ou subsistema por vez, sem alterar arquivos não r
 4. Não hardcode dados que pertencem ao CMS.
 5. Não remova acessibilidade básica de botões, links, headings e imagens.
 6. Não ignore erros de build, type-check ou validação.
+7. Mudanças em dependências precisam passar por validação compatível com o install da Vercel no PR.
 
 ## Regras para UI
 
@@ -54,4 +57,3 @@ Pare e peça orientação se:
 2. Houver conflito entre a tarefa e as invariáveis arquitetônicas.
 3. Uma mudança necessária afetar muitos subsistemas de uma vez.
 4. O repositório tiver alterações não relacionadas que entrem em conflito com o trabalho.
-

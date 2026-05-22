@@ -2,30 +2,26 @@
 
 ## 1. Objetivo da tarefa
 
-Consolidar a configuração inicial de contexto para desenvolvimento assistido por IA no Port Ago. A tarefa deve garantir que qualquer agente consiga entender escopo, arquitetura, padrões de código e identidade visual antes de alterar a aplicação.
+Fazer a falha de resolução de dependências da Vercel quebrar ainda no PR, antes de chegar à produção.
 
 ## 2. Decisões de design
 
-1. A identidade visual oficial é workbench editorial, com fundo claro quente, cartões físicos, bordas fortes e sombras offset.
-2. A paleta deve seguir `agent/ui_context.md` e `app/(app)/globals.css`.
-3. A tipografia oficial é Fraunces para títulos, Archivo para texto geral e IBM Plex Mono para labels técnicos.
-4. Não usar neon, aurora pesada, grid cyber ou glassmorphism como linguagem principal.
-5. O conteúdo administrável continua vindo do Payload CMS.
+1. A falha observada veio de uma preview da Vercel em branch do Dependabot.
+2. A Vercel executou `npm install` e encontrou conflito de peer dependencies entre pacotes Payload `3.83.0` e `3.84.1`.
+3. O workflow de PR executava `npm ci`, que usa o lockfile e não reproduzia a mesma resolução.
+4. A validação de PR deve executar uma checagem de resolução compatível com a Vercel antes do `npm ci`.
 
 ## 3. Detalhes de implementação
 
-1. Criar e manter os arquivos de contexto dentro de `agent/`.
-2. Garantir que os documentos reflitam o estado atual do repositório: Next.js, React, TypeScript, Tailwind CSS v4 e Payload CMS.
-3. Registrar no tracker qualquer decisão arquitetônica tomada depois desta configuração inicial.
-4. Antes de implementar futuras features, o agente deve ler `project_overview.md`, `architecture.md`, `code_standards.md`, `ai_workflow_rules.md` e `ui_context.md`.
+1. Adicionar ao workflow `Quality` o passo `npm install --package-lock-only --ignore-scripts --dry-run`.
+2. Manter `npm ci` para instalação determinística depois da validação.
+3. Registrar a regra nos documentos de workflow e qualidade.
+4. Confirmar que a nova validação passa em `main` e falha na branch problemática do Dependabot.
 
 ## 4. Checklist de conclusão
 
-- [x] A pasta `agent/` existe na raiz do repositório.
-- [x] `agent/project_overview.md` descreve metas, fluxo principal e fora de escopo.
-- [x] `agent/architecture.md` descreve stack, camadas e invariáveis.
-- [x] `agent/code_standards.md` define padrões de TypeScript, React, Next.js, CSS e Payload.
-- [x] `agent/ai_workflow_rules.md` instrui a IA a trabalhar em um recurso ou subsistema por vez.
-- [x] `agent/ui_context.md` documenta identidade visual, paleta, tipografia, bordas e regras de UI.
-- [x] `agent/progress_tracker.md` está inicializado na fase de configuração inicial.
-- [x] Esta tarefa é marcada como concluída quando os arquivos acima estiverem criados e revisados.
+- [x] PR da feature de último commit criada.
+- [x] Branch de correção criada a partir de `main`.
+- [x] Causa da falha da Vercel identificada.
+- [x] Validação de resolução de dependências adicionada ao workflow de PR.
+- [x] Validação final executada.

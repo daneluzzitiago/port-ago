@@ -12,7 +12,7 @@
     "type-check": "tsc --noEmit",
     "knip": "PAYLOAD_SECRET=knip DATABASE_URI=file:./knip.db knip --reporter compact",
     "duplicates": "jscpd --config .jscpd.json .",
-    "quality": "npm run lint && npm run type-check && npm run knip && npm run duplicates",
+    "quality": "npm run lint && npm run knip && npm run type-check && npm run duplicates",
     "quality:ci": "npm run quality && npm run build",
     "check-all": "npm run quality:ci",
     "seed": "set -a && . ./.env && set +a && npx tsx seed.ts",

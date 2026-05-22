@@ -30,6 +30,9 @@ jobs:
           node-version: 20
           cache: npm
 
+      - name: Validate Vercel dependency resolution
+        run: npm install --package-lock-only --ignore-scripts --dry-run
+
       - name: Install dependencies
         run: npm ci
 
@@ -52,11 +55,11 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Type check
-        run: npm run type-check
-
       - name: Detect unused files, exports and dependencies
         run: npm run knip
+
+      - name: Type check
+        run: npm run type-check
 
       - name: Detect duplicated code
         run: npm run duplicates
