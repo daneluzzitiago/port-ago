@@ -6,18 +6,6 @@ type Props = {
   data: PortfolioData
 }
 
-function formatCommitDate(value: string, locale: PortfolioData['locale']): string {
-  const date = new Date(value)
-
-  if (Number.isNaN(date.getTime())) {
-    return value
-  }
-
-  return new Intl.DateTimeFormat(locale === 'pt' ? 'pt-BR' : 'en', {
-    dateStyle: 'medium',
-  }).format(date)
-}
-
 export function WorkbenchSite({ data }: Props) {
   const { locale, dict, hero, degrees, experiences, projects } = data
 
@@ -40,7 +28,6 @@ export function WorkbenchSite({ data }: Props) {
           <Image src="/image.png" alt="Developer illustration" width={500} height={500} priority />
         </div>
         <div className="site-workbench__note">
-          <p>{hero.role}</p>
           <h1>
             {dict.hero.greeting}
             <span>{hero.name}</span>
@@ -104,27 +91,6 @@ export function WorkbenchSite({ data }: Props) {
                     <li key={tool}>{tool}</li>
                   ))}
                 </ul>
-              )}
-              {project.latestCommit && (
-                <div className="site-workbench__commit">
-                  <span>{dict.projects.latestCommit}</span>
-                  {project.latestCommit.status === 'available' ? (
-                    <a
-                      href={project.latestCommit.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${dict.projects.latestCommit}: ${project.latestCommit.message}`}
-                    >
-                      <strong>{project.latestCommit.shortSha}</strong>
-                      <span>{project.latestCommit.message}</span>
-                      <time dateTime={project.latestCommit.committedAt}>
-                        {formatCommitDate(project.latestCommit.committedAt, locale)}
-                      </time>
-                    </a>
-                  ) : (
-                    <p title={project.latestCommit.reason}>{dict.projects.commitUnavailable}</p>
-                  )}
-                </div>
               )}
               <div className="site-workbench__project-actions">
                 {project.isWorkInProgress && <span className="site-workbench__status">WIP</span>}
