@@ -23,7 +23,7 @@
     "@payloadcms/db-sqlite": "^3.83.0",
     "@payloadcms/next": "^3.83.0",
     "@payloadcms/payload-cloud": "^3.83.0",
-    "@payloadcms/richtext-lexical": "^3.83.0",
+    "@payloadcms/richtext-lexical": "^3.84.1",
     "@tailwindcss/postcss": "^4.2.2",
     "@vercel/analytics": "^2.0.1",
     "graphql": "^16.11.0",
