@@ -20,7 +20,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@payloadcms/db-sqlite": "^3.83.0",
+    "@payloadcms/db-sqlite": "^3.84.1",
     "@payloadcms/next": "^3.83.0",
     "@payloadcms/payload-cloud": "^3.83.0",
     "@payloadcms/richtext-lexical": "^3.83.0",
